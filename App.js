@@ -26,8 +26,12 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import database from '@react-native-firebase/database';
 import ProductScreen from './src/screens/ProductScreen';
+import Router from './src/router';
+
+
 
 const reference = database().ref('/Paintings');
+
 
 
 const App: () => Node = () => {
@@ -44,15 +48,15 @@ const App: () => Node = () => {
 
   // console.log('it is working');
 
+
   return (
 
     <View style={{ flef: 1, alignItems: 'center', justifyContent: 'center', height: '100%', }}>
       <ImageBackground source={MarbleImg} resizeMode="cover" style={styles.image}>
-        {/*   <HomeScreen />*/}
-        <HomeScreen />
+        <Router />
+
       </ImageBackground>
     </View>
-
 
 
   );
