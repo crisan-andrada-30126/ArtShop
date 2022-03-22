@@ -1,12 +1,22 @@
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, Image, StyleSheet, ScrollView, Pressable } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import database from '@react-native-firebase/database';
 import Picture from '../../images/pictur.jpg'
+import { useNavigation } from '@react-navigation/native';
+import { Item } from 'react-native-paper/lib/typescript/components/List/List';
 /*render product component */
 const ProductItem = ({ product }) => {
+    const navigation = useNavigation();
+
+    const onPress = () => {
+        navigation.navigate('ProductDetails', { id: product.id })
+    }
+
     return (
 
-        < View style={styles.root} opacity={0.85} >
+        < Pressable style={styles.root} opacity={0.85}
+            onPress={onPress}
+        >
             <View style={styles.left}>
                 <Image style={styles.image} source={Picture} />
 
@@ -36,7 +46,7 @@ const ProductItem = ({ product }) => {
                 </Text>
             </View>
 
-        </View >
+        </Pressable >
     )
 
 }

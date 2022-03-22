@@ -5,11 +5,16 @@ import styles from './styles'
 import MarbleImg from '../../images/marble.jpg'
 import Picture from '../../images/pictur.jpg'
 import ImageCarousel from '../../components/ImageCarousel'
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from 'react-native-vector-icons/FontAwesome'
 import ButtonAR from '../../components/Button/btnAR'
+import { useRoute } from '@react-navigation/native'
 
 const ProductScreen = () => {
     const product = { Title: 'Painting', Description: 'A nicee beautyyy nice aaa mnahsjhusdy hsgfdyfdt goodaaaa', Price: '100', Painter: 'andrada' }
+
+    const route = useRoute();
+    console.log(route.params)
+
     return (
         <View style={styles.root}>
             <Text style={styles.title}>{product.Title}</Text>

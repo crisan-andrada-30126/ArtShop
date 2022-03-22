@@ -10,6 +10,8 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.99.0] C:\Users\Andrad
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.99.0] C:\Users\Andrada\.gradle\caches\transforms-3\bc97f4d16f54cc9d931131f676e764a8\transformed\jetified-flipper-fresco-plugin-0.99.0\AndroidManifest.xml:8:1-15:12
 MERGED from [:react-native-firebase_database] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\database\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-firebase_app] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-27:12
+MERGED from [:react-native-safe-area-context] D:\LICENTA\ArtShop\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
+MERGED from [:react-native-screens] D:\LICENTA\ArtShop\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-vector-icons] D:\LICENTA\ArtShop\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.react:react-native:0.67.3] C:\Users\Andrada\.gradle\caches\transforms-3\e7cb5afcb0aa044f0a6ac5472b37c53c\transformed\jetified-react-native-0.67.3\AndroidManifest.xml:2:1-11:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\aad4eaf9289c48ae90445525ef9c1c0b\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -29,6 +31,7 @@ MERGED from [com.facebook.fresco:memory-type-ashmem:2.5.0] C:\Users\Andrada\.gra
 MERGED from [com.facebook.fresco:imagepipeline:2.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\e7e95ada98971de838a69cb94e386a6f\transformed\jetified-imagepipeline-2.5.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:nativeimagetranscoder:2.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\08e4d6a8c60a1c064fffb592c93d8922\transformed\jetified-nativeimagetranscoder-2.5.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-base:2.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\f4c9b9beaea438bfa25fc5c9d1063e12\transformed\jetified-imagepipeline-base-2.5.0\AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\a05d2154a78a0f6c1080ad9094eb345e\transformed\material-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.appcompat:appcompat:1.3.0] C:\Users\Andrada\.gradle\caches\transforms-3\0e1fcb0115600141ea6b47249b31c449\transformed\appcompat-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\2b38d775c2b8f1aa159fbaf00605887f\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.autofill:autofill:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\eb3decbb9535cac5f907c0434df7ba8b\transformed\jetified-autofill-1.1.0\AndroidManifest.xml:17:1-24:12
@@ -37,6 +40,8 @@ MERGED from [com.facebook.fresco:ui-common:2.5.0] C:\Users\Andrada\.gradle\cache
 MERGED from [androidx.appcompat:appcompat-resources:1.3.0] C:\Users\Andrada\.gradle\caches\transforms-3\53dd4f0b89b8647b2efc64d9359567f7\transformed\jetified-appcompat-resources-1.3.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\0061d1136f3e8d0cd3d44261265bfaa9\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\c6fc6c16e0d9d4867d6c38a100ac949c\transformed\interpolator-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\385fc54762b6b1d4a5e8d3cad60d0ad1\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\1da4e40964a6df551ca61285fc8a921e\transformed\jetified-core-ktx-1.5.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-auth:20.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\cc5470ebe82211de7758a05b1672454c\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:17:1-40:12
 MERGED from [com.google.firebase:firebase-database:20.0.3] C:\Users\Andrada\.gradle\caches\transforms-3\b301db60ed2afc675d730cdf1573063f\transformed\jetified-firebase-database-20.0.3\AndroidManifest.xml:15:1-38:12
 MERGED from [com.google.android.gms:play-services-auth-api-phone:18.0.1] C:\Users\Andrada\.gradle\caches\transforms-3\b8b85c6cce8e75e892693ea4f6503e24\transformed\jetified-play-services-auth-api-phone-18.0.1\AndroidManifest.xml:2:1-7:12
@@ -48,13 +53,16 @@ MERGED from [com.google.firebase:firebase-auth-interop:19.0.2] C:\Users\Andrada\
 MERGED from [com.google.firebase:firebase-common:20.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\a38cc07db81e0ae33c46ee67e8262dc8\transformed\jetified-firebase-common-20.0.0\AndroidManifest.xml:15:1-40:12
 MERGED from [com.google.android.gms:play-services-tasks:18.0.1] C:\Users\Andrada\.gradle\caches\transforms-3\3803366e55a9be7ecdba107ad728616f\transformed\jetified-play-services-tasks-18.0.1\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-basement:18.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\4916ac5b76716ffc0958ee8e642cb56d\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\9d61027d0ee6da244e93e2ae44bdfaea\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.fragment:fragment:1.3.4] C:\Users\Andrada\.gradle\caches\transforms-3\d94757ac6ec57984206dea03b49d1918\transformed\fragment-1.3.4\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.activity:activity:1.2.3] C:\Users\Andrada\.gradle\caches\transforms-3\052c198faca3448cc5999156032a758d\transformed\jetified-activity-1.2.3\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\394c4809285bcc1ac836254c3a457965\transformed\drawerlayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\51c550f44fc9d36895b1b79aceb57cfa\transformed\loader-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\034dcb67290c814ed62e9d82f723fbd0\transformed\viewpager-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\3583d72bb4589661c247d7892d62e2cb\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\865471237d90579f1bb020d0f9935dbd\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\d9b9cbc626c394a675276245c3ea5f24\transformed\customview-1.0.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\Andrada\.gradle\caches\transforms-3\e541c77f022539f3c0c9e5ef740c00bd\transformed\transition-1.2.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\3583d72bb4589661c247d7892d62e2cb\transformed\vectordrawable-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.core:core:1.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\47291499e05edddbe677d920b83f8a54\transformed\core-1.5.0\AndroidManifest.xml:17:1-26:12
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\4c277c0de424cc5f7c31f229242efdea\transformed\cursoradapter-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.3.1] C:\Users\Andrada\.gradle\caches\transforms-3\b67a50ded6f161e22dc806bec9761737\transformed\jetified-lifecycle-viewmodel-savedstate-2.3.1\AndroidManifest.xml:17:1-24:12
@@ -62,6 +70,7 @@ MERGED from [androidx.savedstate:savedstate:1.1.0] C:\Users\Andrada\.gradle\cach
 MERGED from [androidx.lifecycle:lifecycle-runtime:2.3.1] C:\Users\Andrada\.gradle\caches\transforms-3\a056a2fcdd56a861790adc72616e6ba2\transformed\lifecycle-runtime-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\Andrada\.gradle\caches\transforms-3\8315b839dfa9366890e19a0bcc8427ba\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\c0b4046dde1edaec5d274f1cde2f43c6\transformed\sqlite-2.1.0\AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\5b0919237b8437e92b888fd72f4fccec\transformed\cardview-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Andrada\.gradle\caches\transforms-3\9aca2c918a0a7045618bf7a1f2775e27\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:17:1-27:12
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\7dd0a09b6f79bbd042e180f64ed57736\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\2a856d3b444b05ed54815b823b479971\transformed\lifecycle-livedata-2.0.0\AndroidManifest.xml:17:1-22:12
@@ -110,6 +119,8 @@ MERGED from [com.facebook.react:react-native:0.67.3] C:\Users\Andrada\.gradle\ca
 MERGED from [com.facebook.react:react-native:0.67.3] C:\Users\Andrada\.gradle\caches\transforms-3\e7cb5afcb0aa044f0a6ac5472b37c53c\transformed\jetified-react-native-0.67.3\AndroidManifest.xml:9:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.1] C:\Users\Andrada\.gradle\caches\transforms-3\4de20cfae3e0fce0fa91b5b09143eb10\transformed\jetified-soloader-0.10.1\AndroidManifest.xml:11:5-20
 MERGED from [com.facebook.soloader:soloader:0.10.1] C:\Users\Andrada\.gradle\caches\transforms-3\4de20cfae3e0fce0fa91b5b09143eb10\transformed\jetified-soloader-0.10.1\AndroidManifest.xml:11:5-20
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\a05d2154a78a0f6c1080ad9094eb345e\transformed\material-1.1.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\a05d2154a78a0f6c1080ad9094eb345e\transformed\material-1.1.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-auth:20.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\cc5470ebe82211de7758a05b1672454c\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.android.gms:play-services-auth:20.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\cc5470ebe82211de7758a05b1672454c\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:22:5-38:19
 MERGED from [com.google.firebase:firebase-database:20.0.3] C:\Users\Andrada\.gradle\caches\transforms-3\b301db60ed2afc675d730cdf1573063f\transformed\jetified-firebase-database-20.0.3\AndroidManifest.xml:28:5-36:19
@@ -192,6 +203,10 @@ MERGED from [:react-native-firebase_database] D:\LICENTA\ArtShop\node_modules\@r
 MERGED from [:react-native-firebase_database] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\database\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_app] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_app] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-safe-area-context] D:\LICENTA\ArtShop\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-safe-area-context] D:\LICENTA\ArtShop\node_modules\react-native-safe-area-context\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-screens] D:\LICENTA\ArtShop\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-screens] D:\LICENTA\ArtShop\node_modules\react-native-screens\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-vector-icons] D:\LICENTA\ArtShop\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-vector-icons] D:\LICENTA\ArtShop\node_modules\react-native-vector-icons\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.react:react-native:0.67.3] C:\Users\Andrada\.gradle\caches\transforms-3\e7cb5afcb0aa044f0a6ac5472b37c53c\transformed\jetified-react-native-0.67.3\AndroidManifest.xml:5:5-7:41
@@ -230,6 +245,8 @@ MERGED from [com.facebook.fresco:nativeimagetranscoder:2.5.0] C:\Users\Andrada\.
 MERGED from [com.facebook.fresco:nativeimagetranscoder:2.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\08e4d6a8c60a1c064fffb592c93d8922\transformed\jetified-nativeimagetranscoder-2.5.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-base:2.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\f4c9b9beaea438bfa25fc5c9d1063e12\transformed\jetified-imagepipeline-base-2.5.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline-base:2.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\f4c9b9beaea438bfa25fc5c9d1063e12\transformed\jetified-imagepipeline-base-2.5.0\AndroidManifest.xml:5:5-7:41
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\a05d2154a78a0f6c1080ad9094eb345e\transformed\material-1.1.0\AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\a05d2154a78a0f6c1080ad9094eb345e\transformed\material-1.1.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.appcompat:appcompat:1.3.0] C:\Users\Andrada\.gradle\caches\transforms-3\0e1fcb0115600141ea6b47249b31c449\transformed\appcompat-1.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.appcompat:appcompat:1.3.0] C:\Users\Andrada\.gradle\caches\transforms-3\0e1fcb0115600141ea6b47249b31c449\transformed\appcompat-1.3.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite-framework:2.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\2b38d775c2b8f1aa159fbaf00605887f\transformed\sqlite-framework-2.1.0\AndroidManifest.xml:20:5-22:41
@@ -246,6 +263,10 @@ MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\And
 MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\0061d1136f3e8d0cd3d44261265bfaa9\transformed\vectordrawable-animated-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\c6fc6c16e0d9d4867d6c38a100ac949c\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.interpolator:interpolator:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\c6fc6c16e0d9d4867d6c38a100ac949c\transformed\interpolator-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\385fc54762b6b1d4a5e8d3cad60d0ad1\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\385fc54762b6b1d4a5e8d3cad60d0ad1\transformed\coordinatorlayout-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\1da4e40964a6df551ca61285fc8a921e\transformed\jetified-core-ktx-1.5.0\AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\1da4e40964a6df551ca61285fc8a921e\transformed\jetified-core-ktx-1.5.0\AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-auth:20.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\cc5470ebe82211de7758a05b1672454c\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-auth:20.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\cc5470ebe82211de7758a05b1672454c\transformed\jetified-play-services-auth-20.1.0\AndroidManifest.xml:20:5-44
 MERGED from [com.google.firebase:firebase-database:20.0.3] C:\Users\Andrada\.gradle\caches\transforms-3\b301db60ed2afc675d730cdf1573063f\transformed\jetified-firebase-database-20.0.3\AndroidManifest.xml:19:5-21:41
@@ -268,6 +289,8 @@ MERGED from [com.google.android.gms:play-services-tasks:18.0.1] C:\Users\Andrada
 MERGED from [com.google.android.gms:play-services-tasks:18.0.1] C:\Users\Andrada\.gradle\caches\transforms-3\3803366e55a9be7ecdba107ad728616f\transformed\jetified-play-services-tasks-18.0.1\AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-basement:18.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\4916ac5b76716ffc0958ee8e642cb56d\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-basement:18.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\4916ac5b76716ffc0958ee8e642cb56d\transformed\jetified-play-services-basement-18.0.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\9d61027d0ee6da244e93e2ae44bdfaea\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\9d61027d0ee6da244e93e2ae44bdfaea\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.4] C:\Users\Andrada\.gradle\caches\transforms-3\d94757ac6ec57984206dea03b49d1918\transformed\fragment-1.3.4\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.fragment:fragment:1.3.4] C:\Users\Andrada\.gradle\caches\transforms-3\d94757ac6ec57984206dea03b49d1918\transformed\fragment-1.3.4\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.activity:activity:1.2.3] C:\Users\Andrada\.gradle\caches\transforms-3\052c198faca3448cc5999156032a758d\transformed\jetified-activity-1.2.3\AndroidManifest.xml:20:5-22:41
@@ -278,10 +301,14 @@ MERGED from [androidx.loader:loader:1.0.0] C:\Users\Andrada\.gradle\caches\trans
 MERGED from [androidx.loader:loader:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\51c550f44fc9d36895b1b79aceb57cfa\transformed\loader-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\034dcb67290c814ed62e9d82f723fbd0\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\034dcb67290c814ed62e9d82f723fbd0\transformed\viewpager-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\3583d72bb4589661c247d7892d62e2cb\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\3583d72bb4589661c247d7892d62e2cb\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\865471237d90579f1bb020d0f9935dbd\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\865471237d90579f1bb020d0f9935dbd\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\d9b9cbc626c394a675276245c3ea5f24\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\d9b9cbc626c394a675276245c3ea5f24\transformed\customview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\Andrada\.gradle\caches\transforms-3\e541c77f022539f3c0c9e5ef740c00bd\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] C:\Users\Andrada\.gradle\caches\transforms-3\e541c77f022539f3c0c9e5ef740c00bd\transformed\transition-1.2.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\3583d72bb4589661c247d7892d62e2cb\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\3583d72bb4589661c247d7892d62e2cb\transformed\vectordrawable-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\47291499e05edddbe677d920b83f8a54\transformed\core-1.5.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.core:core:1.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\47291499e05edddbe677d920b83f8a54\transformed\core-1.5.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\4c277c0de424cc5f7c31f229242efdea\transformed\cursoradapter-1.0.0\AndroidManifest.xml:20:5-44
@@ -296,6 +323,8 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\Andrada\.gra
 MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.3.1] C:\Users\Andrada\.gradle\caches\transforms-3\8315b839dfa9366890e19a0bcc8427ba\transformed\lifecycle-viewmodel-2.3.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\c0b4046dde1edaec5d274f1cde2f43c6\transformed\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.sqlite:sqlite:2.1.0] C:\Users\Andrada\.gradle\caches\transforms-3\c0b4046dde1edaec5d274f1cde2f43c6\transformed\sqlite-2.1.0\AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\5b0919237b8437e92b888fd72f4fccec\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\5b0919237b8437e92b888fd72f4fccec\transformed\cardview-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Andrada\.gradle\caches\transforms-3\9aca2c918a0a7045618bf7a1f2775e27\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\Andrada\.gradle\caches\transforms-3\9aca2c918a0a7045618bf7a1f2775e27\transformed\versionedparcelable-1.1.1\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.tracing:tracing:1.0.0] C:\Users\Andrada\.gradle\caches\transforms-3\7dd0a09b6f79bbd042e180f64ed57736\transformed\jetified-tracing-1.0.0\AndroidManifest.xml:20:5-22:41

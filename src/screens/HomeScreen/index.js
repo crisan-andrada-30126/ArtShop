@@ -1,13 +1,14 @@
-import { View, Text, Image, StyleSheet, ScrollView, FlatList } from 'react-native'
+import { View, Text, Image, StyleSheet, ScrollView, FlatList, ImageBackground } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import database from '@react-native-firebase/database';
 import Picture from '../../images/pictur.jpg'
 import ProductItem from '../../components/ProductItem';
+import MarbleImg from '../../images/marble.jpg'
 
 
 const reference = database().ref('/Paintings');
 
-
+console.warn("HOME")
 const HomeScreen = () => {
     const [data, setData] = useState([])
 
@@ -26,17 +27,28 @@ const HomeScreen = () => {
 
     return (
 
-        <View>
-            <View>
+
+        <View style={styles.container}>
+            <ImageBackground source={MarbleImg} resizeMode="cover" style={styles.image}>
                 <FlatList data={data}
                     renderItem={({ item }) => <ProductItem product={item} />}
                     showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}
                 />
-
-            </View>
+            </ImageBackground>
         </View>
+
     )
 }
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+    image: {
+        flex: 1,
+        justifyContent: "center",
+        width: '100%'
+    },
+});
 
 export default HomeScreen;
