@@ -5,6 +5,8 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeStack from './homeStack';
 import CartStack from './cartStack';
+import UserScreen from '../screens/User';
+import SellArtScreen from '../screens/SellArtScreen';
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -33,11 +35,19 @@ const BottomTabNav = () => {
                     ),
                 }}
             />
-            <Tab.Screen name="more" component={HomeScreen}
+            <Tab.Screen name="more" component={UserScreen}
                 options={{
                     tabBarLabel: 'Profile',
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons name="user" color={color} size={26} />
+                    ),
+                }}
+            />
+            <Tab.Screen name="add" component={SellArtScreen}
+                options={{
+                    tabBarLabel: 'Add',
+                    tabBarIcon: ({ color }) => (
+                        <MaterialCommunityIcons name="sell" color={color} size={26} />
                     ),
                 }}
             />
