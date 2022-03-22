@@ -49,7 +49,7 @@ const App: () => Node = () => {
     <View style={{ flef: 1, alignItems: 'center', justifyContent: 'center', height: '100%', }}>
       <ImageBackground source={MarbleImg} resizeMode="cover" style={styles.image}>
         {/*   <HomeScreen />*/}
-        <ProductScreen />
+        <HomeScreen />
       </ImageBackground>
     </View>
 
