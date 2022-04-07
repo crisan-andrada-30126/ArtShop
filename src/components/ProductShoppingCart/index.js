@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: 'left',
         fontFamily: 'Bree Serif',
-        color: '#FDF5E6',
+        color: '#white',
         fontWeight: 'bold'
     },
     descriptionPrice: {
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         fontFamily: 'Bree Serif',
-        color: '#FDF5E6',
+        color: '#white',
     },
 
 

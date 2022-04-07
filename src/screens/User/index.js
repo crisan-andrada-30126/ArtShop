@@ -6,6 +6,7 @@ import ProductItem from '../../components/ProductItem';
 import MarbleImg from '../../images/marble.jpg'
 
 
+
 const reference = database().ref('/Paintings');
 
 
@@ -17,7 +18,8 @@ const UserScreen = () => {
 
         <View style={styles.container}>
             <ImageBackground source={MarbleImg} resizeMode="cover" style={styles.image}>
-                <Text>UserScreen</Text>
+                <Text>UserScreen!!!</Text>
+
             </ImageBackground>
         </View>
 

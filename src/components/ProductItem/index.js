@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         fontSize: 19,
         textAlign: 'center',
         fontFamily: 'Bree Serif',
-        color: '#FDF5E6',
+        color: 'white',
         fontWeight: 'bold'
     },
     description: {
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize: 16,
         fontFamily: 'Bree Serif',
-        color: '#FDF5E6',
+        color: 'white',
 
     },
     descriptionPrice: {
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         fontFamily: 'Bree Serif',
-        color: '#FDF5E6',
+        color: 'white',
     },
     subTitle: {
         marginTop: 5,

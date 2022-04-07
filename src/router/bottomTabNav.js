@@ -6,6 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import HomeStack from './homeStack';
 import CartStack from './cartStack';
 import UserScreen from '../screens/User';
+import Login from '../screens/LoginScreen';
 import SellArtScreen from '../screens/SellArtScreen';
 
 
@@ -35,7 +36,7 @@ const BottomTabNav = () => {
                     ),
                 }}
             />
-            <Tab.Screen name="more" component={UserScreen}
+            <Tab.Screen name="more" component={Login}
                 options={{
                     tabBarLabel: 'Profile',
                     tabBarIcon: ({ color }) => (

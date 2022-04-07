@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
 
     },
     quantity: {
-        color: '#FDF5E6',
+        color: '#white',
     },
 });
 
