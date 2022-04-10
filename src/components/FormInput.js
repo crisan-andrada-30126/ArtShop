@@ -17,13 +17,13 @@ export default function FormInput({ labelValue, placeholderText, ...rest }) {
 
 const styles = StyleSheet.create({
     input: {
+        borderWidth: 1,
+        borderColor: '#3D3D5E',
+        backgroundColor: '#E6E6FA',
         padding: 10,
-        marginTop: 5,
         marginBottom: 10,
-        // width: windowWidth / 1.5,
-        // height: windowHeight / 15,
-        fontSize: 16,
-        borderRadius: 8,
-        borderWidth: 1
+        marginTop: 10,
+        borderRadius: 10,
+        width: 250,
     }
 });

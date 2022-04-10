@@ -4,14 +4,12 @@ import database from '@react-native-firebase/database';
 import Picture from '../../images/pictur.jpg'
 import ProductItem from '../../components/ProductItem';
 import MarbleImg from '../../images/marble.jpg'
-
-
+import FormButton from '../../components/FormButton';
 
 const reference = database().ref('/Paintings');
 
 
-const UserScreen = () => {
-
+const UserScreen = (props) => {
 
     return (
 
@@ -19,6 +17,7 @@ const UserScreen = () => {
         <View style={styles.container}>
             <ImageBackground source={MarbleImg} resizeMode="cover" style={styles.image}>
                 <Text>UserScreen!!!</Text>
+                <FormButton Title='Logout' onPress={() => props.handleLogout()} />
 
             </ImageBackground>
         </View>

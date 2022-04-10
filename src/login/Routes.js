@@ -18,15 +18,22 @@ export default function Routes() {
 
     // Handle user state changes
     function onAuthStateChanged(user) {
-        // setUser(user);
         if (initializing) setInitializing(false);
         setLoading(false);
     }
+    const handleLogout = async () => {
+        try {
+            await auth().signOut();
+            setUser(null)
+        } catch (e) {
+            console.error(e);
+        }
+
+
+    }
     const handleLogin = async (email, password) => {
         try {
-            console.log('email', email)
 
-            //  await auth().signInWithEmailAndPassword(email, password);
             const logedUser = (await auth().signInWithEmailAndPassword(email, password)).user
             setUser(logedUser)
         } catch (e) {
@@ -44,7 +51,7 @@ export default function Routes() {
 
     return (
         <Stack.Navigator>
-            {user ? < Stack.Screen name="UserScreen" component={UserScreen} /> :
+            {user ? < Stack.Screen name="UserScreen" >{() => <UserScreen handleLogout={handleLogout} />}</Stack.Screen> :
                 <Stack.Screen name="LoginScreen">{() => <AuthStack handleLogin={handleLogin} />}</Stack.Screen>}
         </Stack.Navigator>
     );

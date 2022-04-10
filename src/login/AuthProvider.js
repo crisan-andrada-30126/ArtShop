@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 import auth from '@react-native-firebase/auth';
+import { useNavigation } from '@react-navigation/native';
 
 /**
  * This provider is created
@@ -9,6 +10,7 @@ import auth from '@react-native-firebase/auth';
 export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
+    const navigation = useNavigation()
     const [user, setUser] = useState(null);
 
     return (
@@ -26,17 +28,22 @@ export const AuthProvider = ({ children }) => {
                 register: async (email, password) => {
                     try {
                         await auth().createUserWithEmailAndPassword(email, password);
+
+                        navigation.reset({
+                            index: 0,
+                            routes: [{ name: 'LoginScreen' }]
+                        })
+                        alert("User created succesfully");
+
+
+                        // navigation.navigate('LoginScreen')
+
                     } catch (e) {
                         console.log(e);
+                        alert("Something went wrong");
                     }
                 },
-                logout: async () => {
-                    try {
-                        await auth().signOut();
-                    } catch (e) {
-                        console.error(e);
-                    }
-                }
+
             }}
         >
             {children}

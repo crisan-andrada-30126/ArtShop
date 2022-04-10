@@ -12,17 +12,17 @@ export default function FormButton({ buttonTitle, ...rest }) {
 
 const styles = StyleSheet.create({
   buttonContainer: {
+    backgroundColor: '#5C5C9C',
+    color: '#E6E6FA',
+    width: 250,
+    marginBottom: 10,
     marginTop: 10,
-    // width: windowWidth / 2,
-    // height: windowHeight / 15,
-    backgroundColor: '#6646ee',
-    padding: 10,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 8
+    borderRadius: 10,
   },
   buttonText: {
     fontSize: 28,
-    color: '#ffffff'
+    justifyContent: 'center',
+    color: 'white',
+    textAlign: 'center'
   }
 });
