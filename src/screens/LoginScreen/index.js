@@ -1,15 +1,32 @@
 import { View, Text, StyleSheet, TextInput } from 'react-native'
 import React, { useState, useCallback } from 'react'
 import Button from '../../components/Button';
+import { useNavigation } from '@react-navigation/native';
+import FirebaseUtils from '../../utils/FirebaseUtil';
 
 const Login = () => {
+    const navigation = useNavigation()
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [create, setCreate] = useState(false)
 
-    const signIn = () => { };
+    const signIn = () => {
+        FirebaseUtils.signIn(email, password).then((res) => {
+            // navigation.navigate('UserScreen')
+        }).catch((e) => {
+            console.log(e);
+            alert("Emial/ password is wrong");
+        })
+    };
     const signUp = () => {
-
+        FirebaseUtils.signUp(email, password).then((res) => {
+            if (res) {
+                alert("User created succesfully");
+            }
+        }).catch((e) => {
+            console.log(e);
+            alert("Something went wrong");
+        })
     }
 
     return (
@@ -26,11 +43,11 @@ const Login = () => {
             <TextInput
                 style={styles.input}
                 placeholder='Email'
-                onChange={setEmail} value={email} />
+                onChangeText={e => setEmail(e)} value={email} />
             <TextInput
                 style={styles.input}
                 placeholder='Password'
-                onChange={setPassword}
+                onChangeText={e => setPassword(e)}
                 secureTextEntry={true}
                 value={password}
             />

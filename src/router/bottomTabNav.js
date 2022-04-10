@@ -8,6 +8,8 @@ import CartStack from './cartStack';
 import UserScreen from '../screens/User';
 import Login from '../screens/LoginScreen';
 import SellArtScreen from '../screens/SellArtScreen';
+import { LoginStack } from './loginStack';
+import Providers from './../login/index';
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -36,7 +38,8 @@ const BottomTabNav = () => {
                     ),
                 }}
             />
-            <Tab.Screen name="more" component={Login}
+            {/* <Tab.Screen name="more" component={LoginStack} */}
+            <Tab.Screen name="more" component={Providers}
                 options={{
                     tabBarLabel: 'Profile',
                     tabBarIcon: ({ color }) => (
