@@ -26,6 +26,7 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 import database from '@react-native-firebase/database';
 import ProductScreen from './src/screens/ProductScreen';
+import Routes from './src/login/Routes';
 import Router from './src/router';
 
 
