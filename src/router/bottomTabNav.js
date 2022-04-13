@@ -5,7 +5,6 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeStack from './homeStack';
 import CartStack from './cartStack';
-import UserScreen from '../screens/User';
 import LoginScreen from '../screens/LoginScreen/LoginScreen';
 import SellArtScreen from '../screens/SellArtScreen';
 import { LoginStack } from './loginStack';

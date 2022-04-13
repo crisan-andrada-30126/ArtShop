@@ -6,7 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomeStack from '../router/homeStack';
 import { AuthContext } from './AuthProvider';
 import Loading from '../components/Loading';
-import UserScreen from '../screens/User';
+import UserStack from '../login/UserStack'
 
 const Stack = createNativeStackNavigator();
 
@@ -51,7 +51,7 @@ export default function Routes() {
 
     return (
         <Stack.Navigator>
-            {user ? < Stack.Screen name="UserScreen" >{() => <UserScreen handleLogout={handleLogout} />}</Stack.Screen> :
+            {user ? < Stack.Screen options={{ header: () => null }} name="UserStack" >{() => <UserStack handleLogout={handleLogout} user={user} />}</Stack.Screen> :
                 <Stack.Screen options={{ header: () => null }} name="LoginScreen">{() => <AuthStack handleLogin={handleLogin} />}</Stack.Screen>}
 
         </Stack.Navigator>
