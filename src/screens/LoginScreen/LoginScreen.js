@@ -1,9 +1,10 @@
 import React, { useState, useContext } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ImageBackground } from 'react-native';
 import FormButton from '../../components/FormButton';
 import FormInput from '../../components/FormInput';
 import { AuthContext } from '../../login/AuthProvider';
 import auth from '@react-native-firebase/auth';
+import Background from '../../images/paintBlue.jpg'
 
 export default function LoginScreen(props) {
 
@@ -12,28 +13,30 @@ export default function LoginScreen(props) {
 
     return (
         <View style={styles.container}>
-            <Text style={styles.text}>Please login</Text>
-            <FormInput
-                value={email}
-                placeholderText='Email'
-                onChangeText={userEmail => setEmail(userEmail)}
-                autoCapitalize='none'
-                keyboardType='email-address'
-                autoCorrect={false}
-            />
-            <FormInput
-                value={password}
-                placeholderText='Password'
-                onChangeText={userPassword => setPassword(userPassword)}
-                secureTextEntry={true}
-            />
-            <FormButton buttonTitle='Login' onPress={() => props.handleLogin(email, password)} />
-            <TouchableOpacity
-                style={styles.navButton}
-                onPress={() => props.navigation.navigate('Signup')}
-            >
-                <Text style={styles.navButtonText}>New user? Join here</Text>
-            </TouchableOpacity>
+            <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
+                <Text style={styles.text}>Login</Text>
+                <FormInput
+                    value={email}
+                    placeholderText='Email'
+                    onChangeText={userEmail => setEmail(userEmail)}
+                    autoCapitalize='none'
+                    keyboardType='email-address'
+                    autoCorrect={false}
+                />
+                <FormInput
+                    value={password}
+                    placeholderText='Password'
+                    onChangeText={userPassword => setPassword(userPassword)}
+                    secureTextEntry={true}
+                />
+                <FormButton buttonTitle='Login' onPress={() => props.handleLogin(email, password)} />
+                <TouchableOpacity
+                    style={styles.navButton}
+                    onPress={() => props.navigation.navigate('Signup')}
+                >
+                    <Text style={styles.navButtonText}>New user? Join here</Text>
+                </TouchableOpacity>
+            </ImageBackground>
         </View>
     );
 }
@@ -45,15 +48,26 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center'
     },
+    image: {
+        flex: 1,
+        justifyContent: "center",
+        width: '100%',
+        justifyContent: 'center',
+        alignItems: 'center'
+    },
     text: {
         fontSize: 24,
-        marginBottom: 10
+        marginBottom: 10,
+        color: '#13405e',
+        fontWeight: 'bold',
+        fontSize: 30
     },
+
     navButton: {
         marginTop: 15
     },
     navButtonText: {
         fontSize: 20,
-        color: '#6646ee'
+        color: '#13405e'
     }
 });

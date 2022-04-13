@@ -11,7 +11,7 @@ import UserScreen from '../screens/User';
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
-    //const { user, setUser } = useContext(AuthContext);
+
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
     const [initializing, setInitializing] = useState(true);
@@ -52,7 +52,8 @@ export default function Routes() {
     return (
         <Stack.Navigator>
             {user ? < Stack.Screen name="UserScreen" >{() => <UserScreen handleLogout={handleLogout} />}</Stack.Screen> :
-                <Stack.Screen name="LoginScreen">{() => <AuthStack handleLogin={handleLogin} />}</Stack.Screen>}
+                <Stack.Screen options={{ header: () => null }} name="LoginScreen">{() => <AuthStack handleLogin={handleLogin} />}</Stack.Screen>}
+
         </Stack.Navigator>
     );
 }

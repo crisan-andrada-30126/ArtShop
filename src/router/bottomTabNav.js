@@ -19,42 +19,39 @@ const BottomTabNav = () => {
 
         <Tab.Navigator
             activeColor="#E6E6FA"
-            barStyle={{ backgroundColor: '#3D3D5E' }}
+            barStyle={{ backgroundColor: '#13405e' }}
         >
-            <Tab.Screen name="home" component={HomeStack}
+            <Tab.Screen name="Home" component={HomeStack}
                 options={{
-                    tabBarLabel: 'Home',
+
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons name="home" color={color} size={26} />
                     ),
                 }}
             />
-            <Tab.Screen name="profile"
-                component={CartStack}
-                options={{
-                    tabBarLabel: 'ShoppingCart',
-                    tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="shoppingcart" color={color} size={26} />
-                    ),
-                }}
-            />
-            {/* <Tab.Screen name="more" component={LoginStack} */}
-            <Tab.Screen name="more" component={Providers}
+
+
+            <Tab.Screen name="more"
                 options={{
                     tabBarLabel: 'Profile',
                     tabBarIcon: ({ color }) => (
                         <MaterialCommunityIcons name="user" color={color} size={26} />
                     ),
                 }}
-            />
-            <Tab.Screen name="add" component={SellArtScreen}
+            >
+                {() => <Providers />}
+            </Tab.Screen >
+
+            <Tab.Screen name="Cart"
+                component={CartStack}
                 options={{
-                    tabBarLabel: 'Add',
+
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="sell" color={color} size={26} />
+                        <MaterialCommunityIcons name="shoppingcart" color={color} size={26} />
                     ),
                 }}
             />
+
         </Tab.Navigator>
 
     )

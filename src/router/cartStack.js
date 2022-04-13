@@ -12,7 +12,7 @@ const CartStack = () => {
         <Stack.Navigator>
             <Stack.Screen name="cart"
                 component={ShoppingCartScreen}
-                options={{ title: 'Shopping Cart' }}
+                options={{ header: () => null }}
             />
             <Stack.Screen name="Adress" component={AdressScreen}
                 options={{ title: 'Adress' }}

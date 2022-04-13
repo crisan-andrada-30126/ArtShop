@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SignupScreen from '../screens/LoginScreen/SignupScreen';
 import LoginScreen from '../screens/LoginScreen/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
+import NotLoged from '../screens/LoginScreen/NotLoged';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,11 +13,12 @@ export default function AuthStack(props) {
 
     return (
         <Stack.Navigator initialRouteName='Login'>
+            <Stack.Screen name="NotLoged" options={{ header: () => null }} component={NotLoged} />
             <Stack.Screen
                 name='LoginScreen'
                 options={{ header: () => null }}
-            >{props => <LoginScreen {...props} handleLogin={handleLogin} />}</Stack.Screen>
-            <Stack.Screen name='Signup' component={SignupScreen} />
+            >{props => <LoginScreen options={{ header: () => null }} {...props} handleLogin={handleLogin} />}</Stack.Screen>
+            <Stack.Screen options={{ header: () => null }} name='Signup' component={SignupScreen} />
         </Stack.Navigator>
     );
 }

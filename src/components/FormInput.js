@@ -18,7 +18,7 @@ export default function FormInput({ labelValue, placeholderText, ...rest }) {
 const styles = StyleSheet.create({
     input: {
         borderWidth: 1,
-        borderColor: '#3D3D5E',
+        borderColor: '#13405e',
         backgroundColor: '#E6E6FA',
         padding: 10,
         marginBottom: 10,
