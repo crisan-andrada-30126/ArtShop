@@ -19,7 +19,7 @@ const BottomTabNav = () => {
 
         <Tab.Navigator
             activeColor="#E6E6FA"
-            barStyle={{ backgroundColor: '#3D3D5E' }}
+            barStyle={{ backgroundColor: '#13405e' }}
         >
             <Tab.Screen name="home" component={HomeStack}
                 options={{

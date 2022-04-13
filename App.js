@@ -19,7 +19,7 @@ import {
   View,
   ImageBackground,
 } from 'react-native';
-import MarbleImg from './src/images/marble.jpg'
+import Background from './src/images/paintBlue.jpg'
 
 import {
   Colors,
@@ -53,7 +53,7 @@ const App: () => Node = () => {
   return (
 
     <View style={{ flef: 1, alignItems: 'center', justifyContent: 'center', height: '100%', }}>
-      <ImageBackground source={MarbleImg} resizeMode="cover" style={styles.image}>
+      <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
         <Router />
 
       </ImageBackground>

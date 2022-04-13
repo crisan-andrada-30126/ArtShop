@@ -2,12 +2,13 @@ import { View, Text } from 'react-native'
 import Button from '../../components/Button'
 import React from 'react'
 import styles from './styles'
-import MarbleImg from '../../images/marble.jpg'
+import { ImageBackground } from 'react-native';
 import Picture from '../../images/pictur.jpg'
 import ImageCarousel from '../../components/ImageCarousel'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import ButtonAR from '../../components/Button/btnAR'
 import { useRoute } from '@react-navigation/native'
+import Background from "../../images/paintBlue.jpg"
 
 const ProductScreen = () => {
     const product = { Title: 'Painting', Description: 'A nicee beautyyy nice aaa mnahsjhusdy hsgfdyfdt goodaaaa', Price: '100', Painter: 'andrada' }
@@ -15,11 +16,12 @@ const ProductScreen = () => {
     const route = useRoute();
     console.log(route.params)
 
-    return (
+    return (<ImageBackground source={Background} resizeMode="cover" style={styles.image}>
         <View style={styles.root}>
+
             <Text style={styles.title}>{product.Title}</Text>
             {/*image carousel */}
-            <ImageCarousel images={[Picture, MarbleImg]} />
+            <ImageCarousel images={[Picture, Background]} />
             {/*price*/}
             < Text style={styles.price}>
                 Price:
@@ -50,6 +52,7 @@ const ProductScreen = () => {
                 onPress={() => { console.warn('add to wishlist') }} />
 
         </View>
+    </ImageBackground>
     )
 }
 

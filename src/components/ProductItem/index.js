@@ -58,12 +58,12 @@ const styles = StyleSheet.create({
         width: 350,
         height: 200,
         borderRadius: 16,
-        backgroundColor: '#708090',
+        backgroundColor: '#fff',
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'flex-start',
-        borderColor: '#3D3D5E',
+        borderColor: '#496678',
         borderWidth: 2,
 
     },
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
         fontSize: 19,
         textAlign: 'center',
         fontFamily: 'Bree Serif',
-        color: 'white',
+        color: '#13405e',
         fontWeight: 'bold'
     },
     description: {
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize: 16,
         fontFamily: 'Bree Serif',
-        color: 'white',
+        color: '#13405e',
 
     },
     descriptionPrice: {
@@ -105,13 +105,13 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         fontFamily: 'Bree Serif',
-        color: 'white',
+        color: '#13405e',
     },
     subTitle: {
         marginTop: 5,
         fontSize: 16,
         fontFamily: 'Bree Serif',
-        color: '#E6E6FA',
+        color: '#13405e',
     }
 
 });

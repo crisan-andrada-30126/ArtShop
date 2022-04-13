@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react'
 import database from '@react-native-firebase/database';
 import Picture from '../../images/pictur.jpg'
 import ProductItem from '../../components/ProductItem';
-import MarbleImg from '../../images/marble.jpg'
+import Background from '../../images/paintBlue.jpg'
 
 
 const reference = database().ref('/Paintings');
@@ -16,7 +16,7 @@ const SellArtScreen = () => {
 
 
         <View style={styles.container}>
-            <ImageBackground source={MarbleImg} resizeMode="cover" style={styles.image}>
+            <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
                 <Text>Sell art</Text>
             </ImageBackground>
         </View>

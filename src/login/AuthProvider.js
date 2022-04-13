@@ -35,9 +35,6 @@ export const AuthProvider = ({ children }) => {
                         })
                         alert("User created succesfully");
 
-
-                        // navigation.navigate('LoginScreen')
-
                     } catch (e) {
                         console.log(e);
                         alert("Something went wrong");
