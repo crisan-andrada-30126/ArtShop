@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
 
     logo: {
 
-        bottom: '10%',
+        bottom: '5%',
         width: 350,
         height: 300,
     },

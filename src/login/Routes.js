@@ -53,6 +53,7 @@ export default function Routes() {
         <Stack.Navigator>
             {user ? < Stack.Screen name="UserScreen" >{() => <UserScreen handleLogout={handleLogout} />}</Stack.Screen> :
                 <Stack.Screen options={{ header: () => null }} name="LoginScreen">{() => <AuthStack handleLogin={handleLogin} />}</Stack.Screen>}
+
         </Stack.Navigator>
     );
 }

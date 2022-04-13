@@ -13,11 +13,11 @@ const HomeStack = () => {
         <Stack.Navigator>
             <Stack.Screen name="Home"
                 component={HomeScreen}
-                options={{ title: 'Home' }}
+                options={{ header: () => null }}
             />
             <Stack.Screen name="ProductDetails" component={ProductScreen} />
             <Stack.Screen name="HomeTabs" component={BottomTabNav} />
-            {/* <Stack.Screen name="UserScreen" component={UserScreen} /> */}
+
         </Stack.Navigator>
 
     )
