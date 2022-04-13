@@ -19,149 +19,152 @@ const reference = database().ref('/Paintings');
 const UserScreen = (props) => {
 
     const navigation = useNavigation()
-
     const user = props.user;
+
     const [update, setUpdate] = useState({
-        displayName: user.displayName,
+        displayName: user.displayName ? user.displayName : '',
         photoURL: '',
-        phoneNumber: user.phoneNumber,
+        phoneNumber: user.phoneNumber ? user.phoneNumber : '',
     })
+    useEffect(() => {
+        auth().currentUser.updateProfile(update);
 
-    auth().currentUser.updateProfile(update);
+    }, [update])
 
-}, [update])
+
+
 
 
     console.log('user', user)
 
-return (
+    return (
 
 
-    <View style={styles.page} >
-        <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
-            <ScrollView>
-                <View style={styles.top}>
-                    <TouchableOpacity>
-                        <Image source={Color}
-                            style={{ width: '100%', height: 150 }}
-                        ></Image>
+        <View style={styles.page} >
+            <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
+                <ScrollView>
+                    <View style={styles.top}>
+                        <TouchableOpacity>
+                            <Image source={Color}
+                                style={{ width: '100%', height: 150 }}
+                            ></Image>
 
-                    </TouchableOpacity>
+                        </TouchableOpacity>
 
-                </View>
-                <View style={{ alignItems: 'center' }}>
-                    <Image source={user.photoURL ? user.photoURL : require('../../images/user.png')}
-                        style={{ width: 120, height: 120, borderRadius: 100, marginTop: -60 }}></Image>
-
-                    <Pressable onPress={() => console.log('img')}  >
-                        <Text style={{ color: 'blue', fontWeight: 'bold' }}>
-                            Upload profile photo
-                        </Text>
-                    </Pressable>
-
-                    < View style={styles.root} opacity={0.65} >
-                        <View style={styles.left}>
-                            <Text style={styles.text}>
-                                Email :
-                            </Text>
-                        </View>
-
-                        <View style={styles.left}>
-                            <Text style={styles.text}>
-                                {user.email}
-                            </Text>
-                        </View>
                     </View>
+                    <View style={{ alignItems: 'center' }}>
+                        <Image source={user.photoURL ? user.photoURL : require('../../images/user.png')}
+                            style={{ width: 120, height: 120, borderRadius: 100, marginTop: -60 }}></Image>
 
-
-                    < View style={styles.root} opacity={0.65} >
-                        <View style={styles.left}>
-                            <Text style={styles.text}>
-                                Name :
+                        <Pressable onPress={() => console.log('img')}  >
+                            <Text style={{ color: 'blue', fontWeight: 'bold' }}>
+                                Upload profile photo
                             </Text>
-                        </View>
+                        </Pressable>
 
-                        <View style={styles.left}>
-                            <FormInput
-                                style={{ borderWidth: 0, width: 100, color: '#13405e', fontWeight: 'bold' }}
-                                value={update.displayName}
-                                placeholderText='Name'
-                                onChangeText={name => setUpdate({ ...update, displayName: name })}
-
-                            />
-                        </View>
-                    </View>
-
-                    < View style={styles.root} opacity={0.65} >
-                        <View style={styles.left}>
-                            <Text style={styles.text}>
-                                Phone Number :
-                            </Text>
-                        </View>
-
-                        <View style={styles.left}>
-                            <FormInput
-                                style={{ borderWidth: 0, width: 100, color: '#13405e', fontWeight: 'bold' }}
-                                value={update.phoneNumber}
-                                placeholderText='PhoneNumber'
-                                onChangeText={number => setUpdate({ ...update, phoneNumber: number })}
-
-                            />
-                        </View>
-                    </View>
-                    <View style={styles.parentBtn}>
-                        <View style={styles.btn}>
-                            <Pressable onPress={() => navigation.navigate('SellScreen')}
-                                style={styles.add}>
-                                <Text style={styles.addText}>
-                                    +
+                        < View style={styles.root} opacity={0.65} >
+                            <View style={styles.left}>
+                                <Text style={styles.text}>
+                                    Email :
                                 </Text>
-                            </Pressable>
-                            <Text style={styles.textAdd}>
-                                Add your artworks
-                            </Text>
+                            </View>
+
+                            <View style={styles.left}>
+                                <Text style={styles.text}>
+                                    {user.email}
+                                </Text>
+                            </View>
                         </View>
 
-                        <View style={styles.btn}>
-                            <Pressable onPress={() => navigation.navigate('YourArtScreen')}
-                                style={styles.logout}>
 
-                                <Image source={ViewEye}
-                                    style={{ width: 40, height: 40, marginTop: 7 }}></Image>
+                        < View style={styles.root} opacity={0.65} >
+                            <View style={styles.left}>
+                                <Text style={styles.text}>
+                                    Name :
+                                </Text>
+                            </View>
 
-                            </Pressable>
-                            <Text style={styles.textView}>
-                                View your posts
-                            </Text>
+                            <View style={styles.left}>
+                                <FormInput
+                                    style={{ borderWidth: 0, width: 100, color: '#13405e', fontWeight: 'bold' }}
+                                    value={update.displayName}
+                                    placeholderText='Name'
+                                    onChangeText={name => setUpdate({ ...update, displayName: name })}
+
+                                />
+                            </View>
                         </View>
 
-                        <View style={styles.btn} >
-                            <Pressable onPress={() => props.handleLogout()}
-                                style={styles.btnLogout}>
+                        < View style={styles.root} opacity={0.65} >
+                            <View style={styles.left}>
+                                <Text style={styles.text}>
+                                    Phone Number :
+                                </Text>
+                            </View>
 
-                                <Image source={LogoutIcon}
-                                    style={{ width: 40, height: 40, marginTop: 5 }}></Image>
+                            <View style={styles.left}>
+                                <FormInput
+                                    style={{ borderWidth: 0, width: 100, color: '#13405e', fontWeight: 'bold' }}
+                                    value={update.phoneNumber}
+                                    placeholderText='PhoneNumber'
+                                    onChangeText={number => setUpdate({ ...update, phoneNumber: number })}
 
-                            </Pressable>
-                            <Text style={styles.textLogout}>
-                                Logout
-                            </Text>
+                                />
+                            </View>
                         </View>
+                        <View style={styles.parentBtn}>
+                            <View style={styles.btn}>
+                                <Pressable onPress={() => navigation.navigate('SellScreen')}
+                                    style={styles.add}>
+                                    <Text style={styles.addText}>
+                                        +
+                                    </Text>
+                                </Pressable>
+                                <Text style={styles.textAdd}>
+                                    Add your artworks
+                                </Text>
+                            </View>
+
+                            <View style={styles.btn}>
+                                <Pressable onPress={() => navigation.navigate('YourArtScreen')}
+                                    style={styles.logout}>
+
+                                    <Image source={ViewEye}
+                                        style={{ width: 40, height: 40, marginTop: 7 }}></Image>
+
+                                </Pressable>
+                                <Text style={styles.textView}>
+                                    View your posts
+                                </Text>
+                            </View>
+
+                            <View style={styles.btn} >
+                                <Pressable onPress={() => props.handleLogout()}
+                                    style={styles.btnLogout}>
+
+                                    <Image source={LogoutIcon}
+                                        style={{ width: 40, height: 40, marginTop: 5 }}></Image>
+
+                                </Pressable>
+                                <Text style={styles.textLogout}>
+                                    Logout
+                                </Text>
+                            </View>
+                        </View>
+
+
                     </View>
-
-
-                </View>
-                {/* <View style={styles.container}>
+                    {/* <View style={styles.container}>
 
                         <FormButton Title='Logout' buttonTitle="Logout" onPress={() => props.handleLogout()} />
 
                     </View> */}
-            </ScrollView>
-        </ImageBackground>
+                </ScrollView>
+            </ImageBackground>
 
-    </View >
+        </View >
 
-)
+    )
 }
 const styles = StyleSheet.create({
     parentBtn: {
