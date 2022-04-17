@@ -14,7 +14,7 @@ import * as yup from 'yup';
 import { addArt, updateArt, uploadArt } from '../../api/ArtApi';
 import ImagePicker from '../../components/ImagePicker/CurryImagePicker';
 import Button from '../../components/Button';
-import NumberPlease from "react-native-number-please";
+
 
 const ArtForm = (props) => {
     const sizeNumber = [{ id: "size", label: "?", min: 0, max: 2000 }];
@@ -57,16 +57,7 @@ const ArtForm = (props) => {
 
 
                     <View style={styles.selectorSize}>
-                        <NumberPlease
-                            digits={sizeNumber}
-                            values={props.values.width}
-                            onChange={(values) => { props.setFieldValue('width', value) }}
-                        />
-                        <NumberPlease
-                            digits={sizeNumber}
-                            values={props.values.height}
-                            onChange={(values) => { props.setFieldValue('height', value) }}
-                        />
+
 
                     </View>
                     <Button
