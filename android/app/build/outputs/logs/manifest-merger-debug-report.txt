@@ -8,6 +8,7 @@ MERGED from D:\LICENTA\ArtShop\android\app\src\main\AndroidManifest.xml:1:1-25:1
 MERGED from [com.facebook.flipper:flipper:0.99.0] C:\Users\Andrada\.gradle\caches\transforms-3\b4bb08ed014de24ba4ea51cfdac8a107\transformed\jetified-flipper-0.99.0\AndroidManifest.xml:8:1-18:12
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.99.0] C:\Users\Andrada\.gradle\caches\transforms-3\35430f40e5b29c5fc8e1fb9850b2a34f\transformed\jetified-flipper-network-plugin-0.99.0\AndroidManifest.xml:8:1-15:12
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.99.0] C:\Users\Andrada\.gradle\caches\transforms-3\bc97f4d16f54cc9d931131f676e764a8\transformed\jetified-flipper-fresco-plugin-0.99.0\AndroidManifest.xml:8:1-15:12
+MERGED from [:react-native-community_slider] D:\LICENTA\ArtShop\node_modules\@react-native-community\slider\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-firebase_auth] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-firebase_database] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\database\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-13:12
 MERGED from [:react-native-firebase_app] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\app\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:2:1-27:12
@@ -218,6 +219,8 @@ MERGED from [com.facebook.flipper:flipper-network-plugin:0.99.0] C:\Users\Andrad
 MERGED from [com.facebook.flipper:flipper-network-plugin:0.99.0] C:\Users\Andrada\.gradle\caches\transforms-3\35430f40e5b29c5fc8e1fb9850b2a34f\transformed\jetified-flipper-network-plugin-0.99.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.99.0] C:\Users\Andrada\.gradle\caches\transforms-3\bc97f4d16f54cc9d931131f676e764a8\transformed\jetified-flipper-fresco-plugin-0.99.0\AndroidManifest.xml:11:5-13:41
 MERGED from [com.facebook.flipper:flipper-fresco-plugin:0.99.0] C:\Users\Andrada\.gradle\caches\transforms-3\bc97f4d16f54cc9d931131f676e764a8\transformed\jetified-flipper-fresco-plugin-0.99.0\AndroidManifest.xml:11:5-13:41
+MERGED from [:react-native-community_slider] D:\LICENTA\ArtShop\node_modules\@react-native-community\slider\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
+MERGED from [:react-native-community_slider] D:\LICENTA\ArtShop\node_modules\@react-native-community\slider\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_auth] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_auth] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\auth\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-firebase_database] D:\LICENTA\ArtShop\node_modules\@react-native-firebase\database\android\build\intermediates\merged_manifest\debug\AndroidManifest.xml:5:5-7:41

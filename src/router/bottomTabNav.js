@@ -6,7 +6,7 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import HomeStack from './homeStack';
 import CartStack from './cartStack';
 import LoginScreen from '../screens/LoginScreen/LoginScreen';
-import SellArtScreen from '../screens/SellArtScreen';
+import SellArtScreen from '../screens/SellArtScreen/SellArtFormScreen';
 import { LoginStack } from './loginStack';
 import Providers from './../login/index';
 
