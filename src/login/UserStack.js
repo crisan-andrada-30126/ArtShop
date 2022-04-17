@@ -2,7 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import UserScreen from '../screens/User';
 import YourArtScreen from "../screens/YourArtScreen"
-import SellArtScreen from '../screens/SellArtScreen';
+import SellArtScreen from '../screens/SellArtScreen/SellArtScreen';
 
 const Stack = createNativeStackNavigator();
 
