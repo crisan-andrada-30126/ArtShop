@@ -5,19 +5,14 @@ import ImagePicker from 'react-native-image-picker';
 import RenderFileUri from './FileUri';
 import Button from '../Button';
 
-const CurryImagePicker = ({ image, inImagePicked }) => {
+const CurryImagePicker = ({ image, onImagePicked }) => {
 
     const [selectedImage, setSelectedImage] = useState();
     const [imageUri, setImageUri] = useState('')
     const [imagePath, setImagePath] = useState('')
     const [imageData, setImageData] = useState("")
 
-    // useEffect(() => {
-    //     if (image) {
-    //         console.log("useEffect: " + image);
-    //         setSelectedImage({ uri: image });
-    //     }
-    // }, [image])
+
 
 
 
@@ -32,7 +27,7 @@ const CurryImagePicker = ({ image, inImagePicked }) => {
 
 
         launchCamera(options, response => {
-            console.log('Response = ', response);
+
             if (response.didCancel) {
                 console.log('User cancelled image picker');
             } else if (response.error) {
@@ -48,6 +43,7 @@ const CurryImagePicker = ({ image, inImagePicked }) => {
                 setImagePath(response.assets[0].fileName)
                 setImageData(response.assets[0].uri)
                 setImageUri(response.assets[0].uri)
+                onImagePicked({ uri: response.assets[0].uri });
             }
 
         })
@@ -61,7 +57,6 @@ const CurryImagePicker = ({ image, inImagePicked }) => {
             },
         };
         launchImageLibrary(options, (response) => {
-            console.log('Response = ', response);
 
             if (response.didCancel) {
                 console.log('User cancelled image picker');
@@ -77,6 +72,7 @@ const CurryImagePicker = ({ image, inImagePicked }) => {
                 setImagePath(response.assets[0].fileName)
                 setImageData(response.assets[0].uri)
                 setImageUri(response.assets[0].uri)
+                onImagePicked({ uri: response.assets[0].uri });
             }
         });
 
@@ -94,6 +90,7 @@ const CurryImagePicker = ({ image, inImagePicked }) => {
                     <Button
                         text="Take a picture"
                         onPress={takePic}
+                        containerStyles={{ height: 27 }}
                     >
 
                     </Button>
@@ -101,7 +98,7 @@ const CurryImagePicker = ({ image, inImagePicked }) => {
 
                 <View style={styles.btn}>
                     <Button
-
+                        containerStyles={{ height: 27 }}
                         text="Choose an Image "
                         onPress={openImageLibrary}
                     >
@@ -120,12 +117,12 @@ const styles = StyleSheet.create({
     },
     imageContainer: {
         borderRadius: 8,
-        marginTop: 20,
+        marginTop: 4,
         borderWidth: 2,
         borderColor: '#13405e',
         backgroundColor: '#eee',
         width: '80%',
-        height: 200,
+        height: 175,
 
     },
     btn: {

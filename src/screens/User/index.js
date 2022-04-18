@@ -32,11 +32,6 @@ const UserScreen = (props) => {
     }, [update])
 
 
-
-
-
-    console.log('user', user)
-
     return (
 
 

@@ -853,6 +853,48 @@
   "resolved" "https://registry.npmjs.org/@expo/sdk-runtime-versions/-/sdk-runtime-versions-1.0.0.tgz"
   "version" "1.0.0"
 
+"@firebase/app@0.x":
+  "integrity" "sha512-b1COyw4HwajJ4zQCtL7w+d4GCQDmEaVO957eLLlBwz4QuDlx3eQIirpQhzkkPH17BJFZ6x0qyYEt6Wbhakn0kg=="
+  "resolved" "https://registry.npmjs.org/@firebase/app/-/app-0.7.21.tgz"
+  "version" "0.7.21"
+  dependencies:
+    "@firebase/component" "0.5.13"
+    "@firebase/logger" "0.3.2"
+    "@firebase/util" "1.5.2"
+    "tslib" "^2.1.0"
+
+"@firebase/component@0.5.13":
+  "integrity" "sha512-hxhJtpD8Ppf/VU2Rlos6KFCEV77TGIGD5bJlkPK1+B/WUe0mC6dTjW7KhZtXTc+qRBp9nFHWcsIORnT8liHP9w=="
+  "resolved" "https://registry.npmjs.org/@firebase/component/-/component-0.5.13.tgz"
+  "version" "0.5.13"
+  dependencies:
+    "@firebase/util" "1.5.2"
+    "tslib" "^2.1.0"
+
+"@firebase/logger@0.3.2":
+  "integrity" "sha512-lzLrcJp9QBWpo40OcOM9B8QEtBw2Fk1zOZQdvv+rWS6gKmhQBCEMc4SMABQfWdjsylBcDfniD1Q+fUX1dcBTXA=="
+  "resolved" "https://registry.npmjs.org/@firebase/logger/-/logger-0.3.2.tgz"
+  "version" "0.3.2"
+  dependencies:
+    "tslib" "^2.1.0"
+
+"@firebase/storage@^0.9.5":
+  "integrity" "sha512-+nCDNIT2pNovlHnLOQPofn8jdOyJ4akUWPGn4ydAoFrfVt1/lINx5Qe+jS3/tKLROfYabqBYxfFUjHQKZBYwvg=="
+  "resolved" "https://registry.npmjs.org/@firebase/storage/-/storage-0.9.5.tgz"
+  "version" "0.9.5"
+  dependencies:
+    "@firebase/component" "0.5.13"
+    "@firebase/util" "1.5.2"
+    "node-fetch" "2.6.7"
+    "tslib" "^2.1.0"
+
+"@firebase/util@1.5.2":
+  "integrity" "sha512-YvBH2UxFcdWG2HdFnhxZptPl2eVFlpOyTH66iDo13JPEYraWzWToZ5AMTtkyRHVmu7sssUpQlU9igy1KET7TOw=="
+  "resolved" "https://registry.npmjs.org/@firebase/util/-/util-1.5.2.tgz"
+  "version" "1.5.2"
+  dependencies:
+    "tslib" "^2.1.0"
+
 "@hapi/hoek@^9.0.0":
   "integrity" "sha512-gfta+H8aziZsm8pZa0vj04KO6biEiisppNgA1kbJvFrrWu9Vm7eaUEy76DIxsuTaWvti5fkJVhllWc6ZTE+Mdw=="
   "resolved" "https://registry.npmjs.org/@hapi/hoek/-/hoek-9.2.1.tgz"
@@ -1268,6 +1310,16 @@
   "integrity" "sha512-8j6zkOo5v1A+isyYrLBW6GGfNiCGqzLK/w7zOGXRtIvb+WO1b5kfXAk+7yJ8ravoapzgjoUxu7uNl6I2IYZB8g=="
   "resolved" "https://registry.npmjs.org/@react-native-firebase/database/-/database-14.5.0.tgz"
   "version" "14.5.0"
+
+"@react-native-firebase/firestore@^14.7.0":
+  "integrity" "sha512-vYmXJYs3VI3Ur4N9BFdls+kwFaQ0+hG5JQe/QA1L/o3UP0ho+oqZ5wyCnpA4uXyQwTgeWUukoedbI+iK0AHpWg=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/firestore/-/firestore-14.7.0.tgz"
+  "version" "14.7.0"
+
+"@react-native-firebase/storage@^14.7.0":
+  "integrity" "sha512-iiIe3IxIHCXqIT+CJGakMOE1GfOVLAIyZQJ/lFwHMIO0nNHJxPP772Nt8MhE/9aftEBvXE1xGh66GGwvnhR/Lw=="
+  "resolved" "https://registry.npmjs.org/@react-native-firebase/storage/-/storage-14.7.0.tgz"
+  "version" "14.7.0"
 
 "@react-native/assets@1.0.0":
   "integrity" "sha512-KrwSpS1tKI70wuKl68DwJZYEvXktDHdZMG0k2AXD/rJVSlB23/X2CB2cutVR0HwNMJIal9HOUOBB2rVfa6UGtQ=="
@@ -5169,7 +5221,7 @@
   dependencies:
     "minimatch" "^3.0.2"
 
-"node-fetch@^2.2.0", "node-fetch@^2.6.0":
+"node-fetch@^2.2.0", "node-fetch@^2.6.0", "node-fetch@2.6.7":
   "integrity" "sha512-ZjMPFEfVx5j+y2yF35Kzx5sF7kDzxuDj6ziH4FFbOp87zKDZNx8yExJIb05OGF4Nlt9IHFIMBkRl41VdvcNdbQ=="
   "resolved" "https://registry.npmjs.org/node-fetch/-/node-fetch-2.6.7.tgz"
   "version" "2.6.7"
@@ -6840,7 +6892,7 @@
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-1.14.1.tgz"
   "version" "1.14.1"
 
-"tslib@^2.0.1":
+"tslib@^2.0.1", "tslib@^2.1.0":
   "integrity" "sha512-77EbyPPpMz+FRFRuAFlWMtmgUWGe9UOG2Z25NqCwiIjRhOf5iKGuzSe5P2w1laq+FkRy4p+PCuVkJSGkzTEKVw=="
   "resolved" "https://registry.npmjs.org/tslib/-/tslib-2.3.1.tgz"
   "version" "2.3.1"

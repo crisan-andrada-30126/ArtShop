@@ -13,6 +13,7 @@ const reference = database().ref('/Paintings');
 
 export default class SellArtScreen extends Component {
 
+
     static navigationOptions = ({ navigation }) => {
         return {
             title: navigation.getParam('art') ? 'Edit Art' : 'New Art'
@@ -26,11 +27,13 @@ export default class SellArtScreen extends Component {
             width: 0,
             height: 0,
             artist: '',
+            price: 0,
         },
 
     }
 
     componentDidMount() {
+
         //  const currentArt = this.props.navigation.getParam('art');
 
         //   if (currentArt) {
@@ -49,7 +52,7 @@ export default class SellArtScreen extends Component {
     render() {
         return (
             <ArtForm
-
+                user={this.props.user}
                 art={this.state.art}
                 //  onArtAdded={this.props.navigation.getParam('artAddedCallback')}
                 onArtUpdated={this.onArtUpdated}
