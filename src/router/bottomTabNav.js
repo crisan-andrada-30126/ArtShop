@@ -1,6 +1,9 @@
 
 import React from 'react'
 import HomeScreen from '../screens/HomeScreen';
+import {
+    Image
+} from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeStack from './homeStack';
@@ -9,6 +12,9 @@ import LoginScreen from '../screens/LoginScreen/LoginScreen';
 import SellArtScreen from '../screens/SellArtScreen/SellArtScreen';
 import { LoginStack } from './loginStack';
 import Providers from './../login/index';
+import UserProfil from '../images/userProfil.png';
+import Home from '../images/home.png';
+import Cart from '../images/cart.png'
 
 
 const Tab = createMaterialBottomTabNavigator();
@@ -24,7 +30,7 @@ const BottomTabNav = () => {
                 options={{
 
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="home" color={color} size={26} />
+                        <Image style={{ width: 27, height: 27 }} source={Home} />
                     ),
                 }}
             />
@@ -34,7 +40,7 @@ const BottomTabNav = () => {
                 options={{
                     tabBarLabel: 'Profile',
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="user" color={color} size={26} />
+                        <Image style={{ width: 25, height: 25 }} source={UserProfil} />
                     ),
                 }}
             >
@@ -46,7 +52,7 @@ const BottomTabNav = () => {
                 options={{
 
                     tabBarIcon: ({ color }) => (
-                        <MaterialCommunityIcons name="shoppingcart" color={color} size={26} />
+                        <Image style={{ width: 27, height: 27 }} source={Cart} />
                     ),
                 }}
             />
