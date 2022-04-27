@@ -9,40 +9,40 @@ const ProductItem = ({ product }) => {
     const navigation = useNavigation();
 
     const onPress = () => {
-        navigation.navigate('ProductDetails', { id: product.id })
+        navigation.navigate('ProductDetails', { product: product })
     }
 
     return (
 
-        < Pressable style={styles.root} opacity={0.85}
+        < Pressable style={styles.root} opacity={1}
             onPress={onPress}
         >
             <View style={styles.left}>
-                <Image style={styles.image} source={Picture} />
+                <Image style={styles.image} source={{ uri: product.image }} />
 
             </View>
             <View style={styles.right}>
 
                 <Text style={styles.title} >
-                    {product.Title}
+                    {product.name}
                 </Text>
 
                 <Text style={styles.description} numberOfLines={3}>
                     <Text style={styles.subTitle} >
                         Description :
                     </Text>
-                    {product.Description}
+                    {product.description}
                 </Text>
                 <Text style={styles.description}>
                     <Text style={styles.subTitle}>
                         Painter :
                     </Text>
-                    {product.Painter}
+                    {product.artist}
                 </Text>
 
                 < Text style={styles.descriptionPrice}>
                     Price :
-                    {product.Price} $
+                    {product.price} $
                 </Text>
             </View>
 

@@ -4,33 +4,44 @@ import database from '@react-native-firebase/database';
 import Picture from '../../images/pictur.jpg'
 import ProductItem from '../../components/ProductItem';
 import Background from '../../images/paintBlue.jpg'
+import firestore from '@react-native-firebase/firestore';
+
+const artsCollection = firestore().collection('Artworks');
 
 
-const reference = database().ref('/Paintings');
 
 console.warn("HOME")
 const HomeScreen = () => {
-    const [data, setData] = useState([])
+
+    const [artworks, setArtworks] = useState([])
+
 
     const getData = () => {
-        reference.on('value', snapshot => {
-            let responselist = Object.values(snapshot.val())
-            setData(responselist)
+
+        artsCollection.get().then(querySnapshot => {
+
+            let responselist = []
+            querySnapshot.forEach(documentSnapshot => {
+                responselist.push(documentSnapshot.data())
+            })
+            setArtworks(responselist)
 
         });
+
+
     }
 
     useEffect(() => {
+
         getData();
     }, []);
-    console.log('data', data)
 
     return (
 
 
         <View style={styles.container}>
             <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
-                <FlatList data={data}
+                <FlatList data={artworks}
                     renderItem={({ item }) => <ProductItem product={item} />}
                     showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}

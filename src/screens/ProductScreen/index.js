@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, ScrollView } from 'react-native'
 import Button from '../../components/Button'
 import React from 'react'
 import styles from './styles'
@@ -10,22 +10,21 @@ import ButtonAR from '../../components/Button/btnAR'
 import { useRoute } from '@react-navigation/native'
 import Background from "../../images/paintBlue.jpg"
 
-const ProductScreen = () => {
-    const product = { Title: 'Painting', Description: 'A nicee beautyyy nice aaa mnahsjhusdy hsgfdyfdt goodaaaa', Price: '100', Painter: 'andrada' }
+const ProductScreen = (props) => {
+
 
     const route = useRoute();
-    console.log(route.params)
-
+    const product = route.params.product
     return (<ImageBackground source={Background} resizeMode="cover" style={styles.image}>
-        <View style={styles.root}>
+        <ScrollView style={styles.root}>
 
-            <Text style={styles.title}>{product.Title}</Text>
+            <Text style={styles.title}>{product.name}</Text>
             {/*image carousel */}
-            <ImageCarousel images={[Picture, Background]} />
+            <ImageCarousel images={[{ uri: product.image }]} />
             {/*price*/}
             < Text style={styles.price}>
                 Price:
-                {product.Price} $
+                {product.price} $
             </Text>
 
             {/*description*/}
@@ -33,13 +32,19 @@ const ProductScreen = () => {
                 <Text style={styles.subTitle}>
                     Painter:
                 </Text>
-                {product.Painter}
+                {product.artist}
             </Text>
             <Text style={styles.description} numberOfLines={3}>
                 <Text style={styles.subTitle} >
                     Description:
                 </Text>
-                {product.Description}
+                {product.description}
+            </Text>
+            <Text style={styles.description} numberOfLines={3}>
+                <Text style={styles.subTitle} >
+                    Size: {product.height} x {product.width}cm
+                </Text>
+
             </Text>
             {/*Buttons*/}
             <Button text={'Add To Cart'}
@@ -47,13 +52,15 @@ const ProductScreen = () => {
             <ButtonAR
                 onPress={() => { console.warn('AR') }} />
             <Button
-                containerStyles={{ backgroundColor: "#F7AAB7", borderColor: "#E59EAA" }}
+                containerStyles={{ backgroundColor: "#F7AAB7", borderColor: "#E59EAA", marginBottom: 20 }}
                 text={'Add To WishList'}
                 onPress={() => { console.warn('add to wishlist') }} />
 
-        </View>
+        </ScrollView>
     </ImageBackground>
     )
 }
+
+
 
 export default ProductScreen

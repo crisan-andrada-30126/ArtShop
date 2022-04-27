@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(226,226,225, 0.8)',
         margin: 10,
         borderRadius: 10,
-        height: '100%'
+        height: '97%',
+        marginBottom: '5%',
     },
     price: {
         fontSize: 22,
