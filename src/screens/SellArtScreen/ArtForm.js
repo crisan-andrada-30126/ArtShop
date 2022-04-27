@@ -234,6 +234,7 @@ export default withFormik({
     }),
     handleSubmit: (values, { props }) => {
 
+
         if (props.art.id) {
             values.id = props.art.id;
             values.createdAt = props.art.createdAt;

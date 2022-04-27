@@ -19,9 +19,9 @@ export function uploadArt(art, onArtUploaded, { updating }) {
                     console.log("snapshot: " + snapshot.state);
                     console.log("progress: " + (snapshot.bytesTransferred / snapshot.totalBytes) * 100);
 
-                    if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
-                        console.log("Success");
-                    }
+                    // if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
+                    //     console.log("Success");
+                    // }
                 },
                 error => {
                     unsubscribe();
@@ -37,10 +37,10 @@ export function uploadArt(art, onArtUploaded, { updating }) {
                             delete art.imageUri;
 
                             if (updating) {
-                                console.log("Updating....");
+                                //    console.log("Updating....");
                                 updateArt(art, onArtUploaded);
                             } else {
-                                console.log("adding...");
+                                //  console.log("adding...");
                                 addArt(art, onArtUploaded);
                             }
                         })
@@ -50,7 +50,7 @@ export function uploadArt(art, onArtUploaded, { updating }) {
     } else {
         console.log("no  image upload");
         if (updating) {
-            console.log("Updating....");
+            //console.log("Updating....");
             updateArt(art, onArtUploaded);
         } else {
             console.log("you must have an  image upload");
@@ -77,7 +77,9 @@ export function addArt(art, addCompleted) {
         .then((snapshot) => {
             art.id = snapshot.id;
             snapshot.set(art);
-        }).then(() => addCompleted(art))
-    console.alert("SUCCES")
-        .catch((error) => console.log(error));
+        }).then(() => {
+            addCompleted(art)
+            console.alert("SUCCES")
+        })
+        .catch((error) => console.log('Eroare add', error));
 } 

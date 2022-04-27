@@ -54,7 +54,7 @@ export default class SellArtScreen extends Component {
             <ArtForm
                 user={this.props.user}
                 art={this.state.art}
-                //  onArtAdded={this.props.navigation.getParam('artAddedCallback')}
+                //   onArtAdded={this.props.navigation.getParam('artAddedCallback')}
                 onArtUpdated={this.onArtUpdated}
             />
         );
