@@ -9,11 +9,11 @@ import firestore from '@react-native-firebase/firestore';
 const artsCollection = firestore().collection('Artworks');
 
 
-
-console.warn("HOME")
-const HomeScreen = () => {
+const HomeScreen = ({ searchValue, HeaderComponent, setSearchValue }) => {
 
     const [artworks, setArtworks] = useState([])
+    const [filtredArtworks, setFiltredArtworks] = useState([])
+
 
 
     const getData = () => {
@@ -25,23 +25,45 @@ const HomeScreen = () => {
                 responselist.push(documentSnapshot.data())
             })
             setArtworks(responselist)
-
+            setFiltredArtworks(responselist)
         });
 
+    }
 
+
+    const searchFilter = (text) => {
+        if (text) {
+            const newData = artworks.filter((item) => {
+                const itemData = item.name ?
+                    item.name.toUpperCase() :
+                    ''.toUpperCase();
+
+                const textData = text.toUpperCase();
+                return itemData.indexOf(textData) > -1;
+            });
+            setFiltredArtworks(newData);
+            setSearchValue(text);
+        } else {
+            setFiltredArtworks(artworks);
+            setSearchValue(text)
+        }
     }
 
     useEffect(() => {
 
         getData();
     }, []);
+    useEffect(() => {
+        searchFilter(searchValue)
+    }, [searchValue])
 
     return (
 
 
         <View style={styles.container}>
+            <HeaderComponent searchValue={searchValue} setSearchValue={setSearchValue} />
             <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
-                <FlatList data={artworks}
+                <FlatList data={filtredArtworks}
                     renderItem={({ item }) => <ProductItem product={item} />}
                     showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}
