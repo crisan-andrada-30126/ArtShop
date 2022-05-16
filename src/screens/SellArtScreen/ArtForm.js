@@ -118,6 +118,45 @@ const ArtForm = (props) => {
     );
 }
 
+
+export default withFormik({
+
+    mapPropsToValues: ({ art }) => ({
+        name: art.name,
+        description: art.description,
+        width: art.width,
+        height: art.height,
+        artist: art.artist,
+        price: art.price,
+        imageUri: art.imageUri,
+        userId: art.userId,
+    }),
+    enableReinitialize: true,
+    validationSchema: (props) => yup.object().shape({
+        name: yup.string().max(30).required(),
+        artist: yup.string().max(50).required(),
+        price: yup.number().required(),
+        width: yup.number().required(),
+        height: yup.number().required(),
+    }),
+    handleSubmit: (values, { props }) => {
+
+        console.log('props.onArtUpdated', props.onArtUpdated)
+        if (props.art.id) {
+            values.id = props.art.id;
+            values.createdAt = props.art.createdAt;
+            values.width = props.art.width;
+            values.height = props.art.height;
+            values.artist = props.art.artist;
+            values.image = props.art.image;
+            values.userId = props.art.userId;
+            uploadArt(values, props.onArtUpdated, { updating: true });
+        } else {
+            uploadArt(values, props.onArtAdded, { updating: false });
+        }
+    },
+})(ArtForm);
+
 const styles = StyleSheet.create({
     row: {
         justifyContent: 'space-between',
@@ -211,41 +250,3 @@ const styles = StyleSheet.create({
         width: '100%'
     },
 });
-
-export default withFormik({
-
-    mapPropsToValues: ({ art }) => ({
-        name: art.name,
-        description: art.description,
-        width: art.width,
-        height: art.height,
-        artist: art.artist,
-        price: art.price,
-        imageUri: art.imageUri,
-        userId: art.userId,
-    }),
-    enableReinitialize: true,
-    validationSchema: (props) => yup.object().shape({
-        name: yup.string().max(30).required(),
-        artist: yup.string().max(50).required(),
-        price: yup.number().required(),
-        width: yup.number().required(),
-        height: yup.number().required(),
-    }),
-    handleSubmit: (values, { props }) => {
-
-
-        if (props.art.id) {
-            values.id = props.art.id;
-            values.createdAt = props.art.createdAt;
-            values.width = props.art.width;
-            values.height = props.art.height;
-            values.artist = props.art.artist;
-            values.image = props.art.image;
-            values.userId = props.art.userId;
-            uploadArt(values, props.onArtUpdated, { updating: true });
-        } else {
-            uploadArt(values, props.onArtAdded, { updating: false });
-        }
-    },
-})(ArtForm);
