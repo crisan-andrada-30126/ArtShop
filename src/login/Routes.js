@@ -22,6 +22,8 @@ function Routes(props) {
     const [initializing, setInitializing] = useState(true);
     const dispatch = useDispatch();
     const reduxState = useSelector((state) => state)
+    const userState = useSelector((state) => state.user.user)
+
 
 
     // Handle user state changes
@@ -66,7 +68,7 @@ function Routes(props) {
 
     return (
         <Stack.Navigator>
-            {user ? < Stack.Screen options={{ header: () => null }} name="UserStack" >{() => <UserStack handleLogout={handleLogout} user={user} />}</Stack.Screen> :
+            {userState ? < Stack.Screen options={{ header: () => null }} name="UserStack" >{() => <UserStack handleLogout={handleLogout} user={userState} />}</Stack.Screen> :
                 <Stack.Screen options={{ header: () => null }} name="LoginScreen">{() => <AuthStack handleLogin={handleLogin} />}</Stack.Screen>}
 
         </Stack.Navigator>
