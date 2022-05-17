@@ -63,7 +63,7 @@ const ProductScreen = (props) => {
     }
 
     const addToFav = () => {
-        if (user.uid) {
+        if (user) {
             addToFavorites(user.uid, product.id)
             setIsFavorit(true)
         }

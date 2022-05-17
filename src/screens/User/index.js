@@ -12,6 +12,7 @@ import FormButton from '../../components/FormButton';
 import auth from '@react-native-firebase/auth';
 import { Button } from 'react-native-paper';
 import { useNavigation } from '@react-navigation/native';
+import { useDispatch, useSelector } from 'react-redux'
 
 const reference = database().ref('/Paintings');
 
@@ -19,7 +20,8 @@ const reference = database().ref('/Paintings');
 const UserScreen = (props) => {
 
     const navigation = useNavigation()
-    const user = props.user;
+    const user = useSelector((state) => state.user.user)
+
 
     const [update, setUpdate] = useState({
         displayName: user.displayName ? user.displayName : '',
