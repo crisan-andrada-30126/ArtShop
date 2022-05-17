@@ -6,6 +6,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ProductScreen from '../screens/ProductScreen';
 import BottomTabNav from './bottomTabNav';
 import logo from "../images/TOA.png"
+import Providers from './../login/index';
 
 const Stack = createNativeStackNavigator();
 
@@ -47,7 +48,7 @@ const HomeStack = () => {
             </Stack.Screen>
             <Stack.Screen name="ProductDetails" component={ProductScreen} />
             <Stack.Screen name="HomeTabs" component={BottomTabNav} />
-
+            <Stack.Screen name="ProviderAuth" options={{ header: () => null }} component={Providers} />
         </Stack.Navigator>
 
     )
