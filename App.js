@@ -24,14 +24,9 @@ import Background from './src/images/paintBlue.jpg'
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import database from '@react-native-firebase/database';
 import ProductScreen from './src/screens/ProductScreen';
 import Routes from './src/login/Routes';
 import Router from './src/router';
-
-
-
-const reference = database().ref('/Paintings');
 
 
 
@@ -41,13 +36,6 @@ const App: () => Node = () => {
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
-
-  // reference
-  //   .on('value', snapshot => {
-  //     console.log('User data: ', snapshot.val());
-  //   });
-
-  // console.log('it is working');
 
 
   return (
@@ -73,5 +61,6 @@ const styles = StyleSheet.create({
     width: '100%'
   },
 });
+
 
 export default App;
