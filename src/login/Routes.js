@@ -9,6 +9,7 @@ import Loading from '../components/Loading';
 import UserStack from '../login/UserStack'
 import { connect } from 'react-redux';
 import { isLoged } from '../redux/actions/loged';
+import { saveUser } from '../redux/actions/loged';
 import { useDispatch, useSelector } from 'react-redux'
 
 
@@ -21,8 +22,7 @@ function Routes(props) {
     const [initializing, setInitializing] = useState(true);
     const dispatch = useDispatch();
     const reduxState = useSelector((state) => state)
-    console.log('reduxState', reduxState)
-    console.log('isLoged', isLoged.type)
+
 
     // Handle user state changes
     function onAuthStateChanged(user) {
@@ -33,6 +33,7 @@ function Routes(props) {
         try {
             await auth().signOut();
             setUser(null)
+            dispatch(saveUser(null))
             dispatch(isLoged(false))
         } catch (e) {
             console.error(e);
@@ -45,10 +46,12 @@ function Routes(props) {
 
             const logedUser = (await auth().signInWithEmailAndPassword(email, password)).user
             setUser(logedUser)
+            dispatch(saveUser(logedUser))
             dispatch(isLoged(true))
 
         } catch (e) {
             console.log(e);
+            dispatch(saveUser(null))
             dispatch(isLoged(false))
         }
     };

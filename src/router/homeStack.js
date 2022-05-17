@@ -48,7 +48,7 @@ const HomeStack = () => {
             </Stack.Screen>
             <Stack.Screen name="ProductDetails" component={ProductScreen} />
             <Stack.Screen name="HomeTabs" component={BottomTabNav} />
-            <Stack.Screen name="ProviderAuth" options={{ header: () => null }} component={Providers} />
+            <Stack.Screen name="NotLoged" options={{ header: () => null }} component={Providers} />
         </Stack.Navigator>
 
     )

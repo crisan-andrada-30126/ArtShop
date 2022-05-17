@@ -16,30 +16,28 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const favorites = firestore().collection('Favorites');
 
-const user = {}
+
 
 const ProductScreen = (props) => {
     const [isFavorit, setIsFavorit] = useState(false)
     const [yourFavorite, setYourFavorite] = useState([])
     const reduxState = useSelector((state) => state)
-    console.log('reduxStatePROD', reduxState)
+    const user = useSelector((state) => state.user.user)
 
-
-    console.log('user', user)
 
     const navigation = useNavigation()
     const route = useRoute();
     const product = route.params.product
-    console.log('product', product.id)
+
 
     const getData = () => {
-        console.log("first")
+
         favorites.get().then(querySnapshot => {
 
             let responselist = []
             querySnapshot.forEach(documentSnapshot => {
 
-                if (user.id == documentSnapshot.data().userId && product.id == documentSnapshot.data().artId) {
+                if (user.uid == documentSnapshot.data().userId && product.id == documentSnapshot.data().artId) {
                     responselist.push(documentSnapshot.data())
                     setYourFavorite(documentSnapshot.data().id)
                 }
@@ -52,7 +50,7 @@ const ProductScreen = (props) => {
 
 
     }
-    console.log('isFavorit', isFavorit)
+
     useEffect(() => {
 
         getData();
@@ -65,8 +63,8 @@ const ProductScreen = (props) => {
     }
 
     const addToFav = () => {
-        if (user.id) {
-            addToFavorites(user.id, product.id)
+        if (user.uid) {
+            addToFavorites(user.uid, product.id)
             setIsFavorit(true)
         }
         else {
@@ -129,7 +127,7 @@ const ProductScreen = (props) => {
                 onPress={() => addToFav()} /> :
                 <Button
                     containerStyles={{ backgroundColor: "#E2E2E1", borderWidth: 5, borderColor: "#E59EAA", marginBottom: 20 }}
-                    text={'It is on of your favorites '}
+                    text={'It is on of your favorites list '}
                     onPress={() => removeFromFav()} />
             }
 

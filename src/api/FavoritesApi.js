@@ -24,6 +24,5 @@ export function addToFavorites(userId, artId) {
 }
 
 export function removeFavorit(id) {
-    console.log("DELETE")
     firebase.firestore().collection("Favorites").doc(id).delete()
 }

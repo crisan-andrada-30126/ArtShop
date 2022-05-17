@@ -24,17 +24,9 @@ import Background from './src/images/paintBlue.jpg'
 import {
   Colors,
 } from 'react-native/Libraries/NewAppScreen';
-import database from '@react-native-firebase/database';
 import ProductScreen from './src/screens/ProductScreen';
 import Routes from './src/login/Routes';
 import Router from './src/router';
-import { connect } from 'react-redux';
-import { isLoged } from './src/redux/actions/loged';
-import { bindActionCreators } from 'redux';
-
-
-
-const reference = database().ref('/Paintings');
 
 
 
@@ -45,14 +37,7 @@ const App: () => Node = () => {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
-  // reference
-  //   .on('value', snapshot => {
-  //     console.log('User data: ', snapshot.val());
-  //   });
 
-  // console.log('it is working');
-
-  console.log("helooo")
   return (
 
     <View style={{ flef: 1, alignItems: 'center', justifyContent: 'center', height: '100%', }}>

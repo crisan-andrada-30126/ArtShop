@@ -1,6 +1,8 @@
 import { IS_LOGED } from '../constants';
+
 const initialState = {
-    isLoged: false
+    isLoged: false,
+
 };
 const logedReducer = (state = initialState, action) => {
     switch (action.type) {
