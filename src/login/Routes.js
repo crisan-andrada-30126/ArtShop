@@ -47,12 +47,21 @@ function Routes(props) {
         try {
 
             const logedUser = (await auth().signInWithEmailAndPassword(email, password)).user
-            setUser(logedUser)
-            dispatch(saveUser(logedUser))
-            dispatch(isLoged(true))
+
+            if (logedUser.emailVerified) {
+                setUser(logedUser)
+                dispatch(saveUser(logedUser))
+                dispatch(isLoged(true))
+            }
+            else {
+                alert("This account  is not verified ! Please verify your email !")
+                dispatch(saveUser(null))
+                dispatch(isLoged(false))
+            }
+
 
         } catch (e) {
-            console.log(e);
+            alert(e);
             dispatch(saveUser(null))
             dispatch(isLoged(false))
         }

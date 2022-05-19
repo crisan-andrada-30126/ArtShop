@@ -20,26 +20,45 @@ export const AuthProvider = ({ children }) => {
                 setUser,
                 handleLogin: async (email, password) => {
                     try {
-                        await auth().signInWithEmailAndPassword(email, password);
+                        const userLoged = await auth().signInWithEmailAndPassword(email, password);
+
                     } catch (e) {
-                        console.log(e);
+                        alert(e);
                     }
                 },
                 register: async (email, password) => {
                     try {
                         await auth().createUserWithEmailAndPassword(email, password);
 
+                        await auth().currentUser.sendEmailVerification()
+
+                        await auth().signOut()
+
+
                         navigation.reset({
                             index: 0,
                             routes: [{ name: 'LoginScreen' }]
                         })
-                        alert("User created succesfully");
+                        alert("User created succesfully. Please verify your email for verification. ");
 
                     } catch (e) {
                         console.log(e);
-                        alert("Something went wrong");
+                        alert("Something went wrong",);
                     }
                 },
+                resetPassword: async (email) => {
+                    try {
+                        await auth().sendPasswordResetEmail(email)
+                        alert("We send you an email! Please check your email ! ")
+                        navigation.reset({
+                            index: 0,
+                            routes: [{ name: 'LoginScreen' }]
+                        })
+                    } catch (e) {
+                        alert(e)
+                    }
+
+                }
 
             }}
         >

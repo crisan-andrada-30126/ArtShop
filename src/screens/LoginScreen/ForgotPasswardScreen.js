@@ -6,15 +6,20 @@ import { AuthContext } from '../../login/AuthProvider';
 import auth from '@react-native-firebase/auth';
 import Background from '../../images/paintBlue.jpg'
 
-export default function LoginScreen(props) {
-
+export default function ForgotPasswordScreen(props) {
+    const { resetPassword } = useContext(AuthContext);
     const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+
+    const handleReset = () => {
+        resetPassword(email)
+
+    }
 
     return (
         <View style={styles.container}>
             <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
-                <Text style={styles.text}>Login</Text>
+                <Text style={styles.text}>Reset Password</Text>
+                <Text style={styles.textInfo}>Enter your email and check your imbox for the email with the password reset link</Text>
                 <FormInput
                     value={email}
                     placeholderText='Email'
@@ -23,27 +28,17 @@ export default function LoginScreen(props) {
                     keyboardType='email-address'
                     autoCorrect={false}
                 />
-                <FormInput
-                    value={password}
-                    placeholderText='Password'
-                    onChangeText={userPassword => setPassword(userPassword)}
-                    secureTextEntry={true}
-                />
-                <FormButton buttonTitle='Login' onPress={() => props.handleLogin(email, password)} />
+
+                <FormButton buttonTitle='Rest Password' onPress={handleReset} />
+
                 <TouchableOpacity
                     style={styles.navButton}
-                    onPress={() => props.navigation.navigate('Signup')}
+                    onPress={() => props.navigation.navigate('LoginScreen')}
                 >
-                    <Text style={styles.navButtonText}>New user? Join here</Text>
-                </TouchableOpacity>
-                <TouchableOpacity
-                    style={styles.navButton}
-                    onPress={() => props.navigation.navigate('ResetPassword')}
-                >
-                    <Text style={styles.navButtonText}>Forgot password</Text>
+                    <Text style={styles.navButtonText}>Go to login</Text>
                 </TouchableOpacity>
             </ImageBackground>
-        </View>
+        </View >
     );
 }
 
@@ -68,9 +63,18 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 30
     },
+    textInfo: {
+        fontSize: 13,
+        marginBottom: 10,
+        color: '#13405e',
+        marginRight: 35,
+        marginLeft: 35,
+        textAlign: 'center',
+
+    },
 
     navButton: {
-        marginTop: 10
+        marginTop: 15
     },
     navButtonText: {
         fontSize: 20,
