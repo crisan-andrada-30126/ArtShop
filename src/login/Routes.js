@@ -7,14 +7,24 @@ import HomeStack from '../router/homeStack';
 import { AuthContext } from './AuthProvider';
 import Loading from '../components/Loading';
 import UserStack from '../login/UserStack'
+import { connect } from 'react-redux';
+import { isLoged } from '../redux/actions/loged';
+import { saveUser } from '../redux/actions/loged';
+import { useDispatch, useSelector } from 'react-redux'
+
 
 const Stack = createNativeStackNavigator();
 
-export default function Routes() {
+function Routes(props) {
 
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true);
     const [initializing, setInitializing] = useState(true);
+    const dispatch = useDispatch();
+    const reduxState = useSelector((state) => state)
+    const userState = useSelector((state) => state.user.user)
+
+
 
     // Handle user state changes
     function onAuthStateChanged(user) {
@@ -25,6 +35,8 @@ export default function Routes() {
         try {
             await auth().signOut();
             setUser(null)
+            dispatch(saveUser(null))
+            dispatch(isLoged(false))
         } catch (e) {
             console.error(e);
         }
@@ -36,8 +48,13 @@ export default function Routes() {
 
             const logedUser = (await auth().signInWithEmailAndPassword(email, password)).user
             setUser(logedUser)
+            dispatch(saveUser(logedUser))
+            dispatch(isLoged(true))
+
         } catch (e) {
             console.log(e);
+            dispatch(saveUser(null))
+            dispatch(isLoged(false))
         }
     };
     useEffect(() => {
@@ -51,9 +68,11 @@ export default function Routes() {
 
     return (
         <Stack.Navigator>
-            {user ? < Stack.Screen options={{ header: () => null }} name="UserStack" >{() => <UserStack handleLogout={handleLogout} user={user} />}</Stack.Screen> :
+            {userState ? < Stack.Screen options={{ header: () => null }} name="UserStack" >{() => <UserStack handleLogout={handleLogout} user={userState} />}</Stack.Screen> :
                 <Stack.Screen options={{ header: () => null }} name="LoginScreen">{() => <AuthStack handleLogin={handleLogin} />}</Stack.Screen>}
 
         </Stack.Navigator>
     );
 }
+
+export default Routes;
