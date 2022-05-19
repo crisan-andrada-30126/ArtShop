@@ -26,3 +26,7 @@ export function addToFavorites(userId, artId) {
 export function removeFavorit(id) {
     firebase.firestore().collection("Favorites").doc(id).delete()
 }
+
+export function getFavoritesByUserId(userId) {
+
+}
