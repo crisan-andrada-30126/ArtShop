@@ -61,7 +61,7 @@ function Routes(props) {
 
 
         } catch (e) {
-            console.log(e);
+            alert(e);
             dispatch(saveUser(null))
             dispatch(isLoged(false))
         }

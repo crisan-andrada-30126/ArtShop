@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
                         const userLoged = await auth().signInWithEmailAndPassword(email, password);
 
                     } catch (e) {
-                        console.log(e);
+                        alert(e);
                     }
                 },
                 register: async (email, password) => {
@@ -43,9 +43,22 @@ export const AuthProvider = ({ children }) => {
 
                     } catch (e) {
                         console.log(e);
-                        alert("Something went wrong");
+                        alert("Something went wrong",);
                     }
                 },
+                resetPassword: async (email) => {
+                    try {
+                        await auth().sendPasswordResetEmail(email)
+                        alert("We send you an email! Please check your email ! ")
+                        navigation.reset({
+                            index: 0,
+                            routes: [{ name: 'LoginScreen' }]
+                        })
+                    } catch (e) {
+                        alert(e)
+                    }
+
+                }
 
             }}
         >

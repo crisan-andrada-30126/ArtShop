@@ -4,6 +4,7 @@ import SignupScreen from '../screens/LoginScreen/SignupScreen';
 import LoginScreen from '../screens/LoginScreen/LoginScreen';
 import HomeScreen from '../screens/HomeScreen';
 import NotLoged from '../screens/LoginScreen/NotLoged';
+import ForgotPasswordScreen from '../screens/LoginScreen/ForgotPasswardScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,6 +15,7 @@ export default function AuthStack(props) {
     return (
         <Stack.Navigator initialRouteName='Login'>
             <Stack.Screen name="NotLoged" options={{ header: () => null }} component={NotLoged} />
+            <Stack.Screen name="ResetPassword" options={{ header: () => null }} component={ForgotPasswordScreen} />
             <Stack.Screen
                 name='LoginScreen'
                 options={{ header: () => null }}
