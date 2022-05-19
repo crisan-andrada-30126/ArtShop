@@ -7,6 +7,7 @@ import ProductItem from '../../components/ProductItem';
 import Background from '../../images/paintBlue.jpg';
 import LogoutIcon from "../../images/logoutIcon.png";
 import ViewEye from '../../images/view.png';
+import Favorite from '../../images/Fav.png';
 import Color from '../../images/color.png';
 import FormButton from '../../components/FormButton';
 import auth from '@react-native-firebase/auth';
@@ -124,14 +125,27 @@ const UserScreen = (props) => {
 
                             <View style={styles.btn}>
                                 <Pressable onPress={() => navigation.navigate('YourArtScreen')}
-                                    style={styles.logout}>
+                                    style={styles.viewBtn}>
 
                                     <Image source={ViewEye}
-                                        style={{ width: 40, height: 40, marginTop: 7 }}></Image>
+                                        style={{ width: 35, height: 35, marginTop: 7 }}></Image>
 
                                 </Pressable>
                                 <Text style={styles.textView}>
                                     View your posts
+                                </Text>
+                            </View>
+
+                            <View style={styles.btn}>
+                                <Pressable onPress={() => navigation.navigate('YourFavoritesScreen')}
+                                    style={styles.fav} >
+
+                                    <Image source={Favorite}
+                                        style={{ width: 40, height: 40, marginTop: 7, marginRight: 2 }}></Image>
+
+                                </Pressable>
+                                <Text style={styles.textFav}>
+                                    Your Favorites
                                 </Text>
                             </View>
 
@@ -174,23 +188,31 @@ const styles = StyleSheet.create({
 
     },
     btn: {
-        flexBasis: '30%',
+        flexBasis: '25%',
+
+    },
+    fav: {
+        marginTop: 15,
+        width: 50,
+        height: 50,
+        backgroundColor: '#DB7093',
+        borderRadius: 100,
+        alignItems: 'center'
 
     },
     add: {
         marginTop: 15,
         width: 50,
         height: 50,
-        backgroundColor: '#E59EAA',
+        backgroundColor: '#3D3D5E',
         borderRadius: 100,
         alignItems: 'center'
-
     },
-    logout: {
+    viewBtn: {
         marginTop: 15,
         width: 50,
         height: 50,
-        backgroundColor: '#3D3D5E',
+        backgroundColor: '#5C5C9C',
         borderRadius: 100,
         alignItems: 'center'
 
@@ -214,15 +236,22 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     textAdd: {
-        color: '#DB7093',
+        color: '#3D3D5E',
         fontWeight: 'bold'
     },
     textView: {
         marginLeft: -6,
-        color: '#3D3D5E',
+        color: '#5C5C9C',
         fontWeight: 'bold',
         width: 70,
         textAlign: 'center'
+    },
+    textFav: {
+        marginLeft: -6,
+        color: '#DB7093',
+        fontWeight: 'bold',
+        width: 70,
+        textAlign: 'center',
     },
     page: {
         flex: 1
