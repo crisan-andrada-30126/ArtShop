@@ -15,7 +15,7 @@ export default function UserStack({ handleLogout, user }) {
                 {() => < UserScreen handleLogout={handleLogout} user={user} />}
             </Stack.Screen>
             <Stack.Screen name='YourArtScreen' component={YourArtScreen} />
-            <Stack.Screen name='YourFavoritesScreen' component={YourFavoritesScreen} />
+            <Stack.Screen name='YourWishListScreen' component={YourFavoritesScreen} />
             <Stack.Screen name='SellScreen' >
                 {() => < SellArtScreen user={user} />}
             </Stack.Screen>

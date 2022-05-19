@@ -127,7 +127,7 @@ const ProductScreen = (props) => {
                 onPress={() => addToFav()} /> :
                 <Button
                     containerStyles={{ backgroundColor: "#E2E2E1", borderWidth: 5, borderColor: "#E59EAA", marginBottom: 20 }}
-                    text={'It is on of your favorites list '}
+                    text={'It is on your wish list '}
                     onPress={() => removeFromFav()} />
             }
 

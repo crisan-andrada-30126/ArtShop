@@ -137,7 +137,7 @@ const UserScreen = (props) => {
                             </View>
 
                             <View style={styles.btn}>
-                                <Pressable onPress={() => navigation.navigate('YourFavoritesScreen')}
+                                <Pressable onPress={() => navigation.navigate('YourWishListScreen')}
                                     style={styles.fav} >
 
                                     <Image source={Favorite}

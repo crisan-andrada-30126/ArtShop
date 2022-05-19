@@ -4,44 +4,54 @@ import database from '@react-native-firebase/database';
 import Picture from '../../images/pictur.jpg'
 import ProductItem from '../../components/ProductItem';
 import Background from '../../images/paintBlue.jpg'
-import ArtItem from './item';
-
+import ArtItem from '../../components/ArtItem/item';
 import { getFavoritesByUserId } from '../../api/FavoritesApi'
 import firestore from '@react-native-firebase/firestore';
-
+import { useSelector } from 'react-redux'
 import { useNavigation } from '@react-navigation/native';
 
 
-const reference = database().ref('/Favorites');
+const favsCollection = firestore().collection('Favorites');
+const artsCollection = firestore().collection('Artworks');
 
 
 const YourFavoritesScreen = (props) => {
     const navigation = useNavigation()
+    const [favoritesItemsIds, setFavoritesItemsIds] = useState([])
     const [items, setItems] = useState([])
+    const user = useSelector((state) => state.user.user)
 
     useEffect(() => {
+        let isMounted = true;
         var responselist = []
-        artsCollection.get().then(querySnapshot => {
-
+        favsCollection.get().then(querySnapshot => {
             querySnapshot.forEach(documentSnapshot => {
-
-                if (props.user.uid == documentSnapshot.data().userId) {
-                    console.log('este!')
-                    responselist.push(documentSnapshot.data())
+                if (user.uid == documentSnapshot.data().userId) {
+                    responselist.push(documentSnapshot.data().artId)
                 }
-
-
             })
-
-            setItems(responselist)
-        });
-
-
+            if (isMounted) setFavoritesItemsIds(responselist)
+        })
+        return () => { isMounted = false }
     }, []);
 
-    console.log('items**', items)
+    useEffect(() => {
+        let isMounted = true;
+        if (favoritesItemsIds.length > 0) {
+            var artLists = []
+            artsCollection.get().then(querySnapshot => {
+                querySnapshot.forEach(documentSnapshot => {
 
+                    if (favoritesItemsIds.includes(documentSnapshot.data().id)) {
+                        artLists.push(documentSnapshot.data())
+                    }
+                })
 
+                if (isMounted) setItems(artLists)
+            })
+        }
+        return () => { isMounted = false }
+    }, [favoritesItemsIds])
 
     return (
 
@@ -53,11 +63,12 @@ const YourFavoritesScreen = (props) => {
                     showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}
                 /> :
+                    <View style={styles.noItems} opacity={0.7}>
 
-                    <Text style={styles.textAdd}>
-                        You have not added anyting yet!
-                    </Text>
-
+                        <Text style={styles.textAdd} >
+                            You have nothing in your wish list yet!
+                        </Text>
+                    </View>
 
                 }
             </ImageBackground>
@@ -74,6 +85,20 @@ const styles = StyleSheet.create({
         justifyContent: "center",
         width: '100%'
     },
+    textAdd: {
+        marginTop: 13,
+        fontSize: 30,
+        color: '#DB7093',
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    noItems: {
+        height: 110,
+        backgroundColor: '#FFF',
+        marginRight: 30,
+        marginLeft: 30,
+        borderRadius: 15,
+    }
 });
 
 export default YourFavoritesScreen;
