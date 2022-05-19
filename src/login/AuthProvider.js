@@ -20,7 +20,8 @@ export const AuthProvider = ({ children }) => {
                 setUser,
                 handleLogin: async (email, password) => {
                     try {
-                        await auth().signInWithEmailAndPassword(email, password);
+                        const userLoged = await auth().signInWithEmailAndPassword(email, password);
+
                     } catch (e) {
                         console.log(e);
                     }
@@ -29,11 +30,16 @@ export const AuthProvider = ({ children }) => {
                     try {
                         await auth().createUserWithEmailAndPassword(email, password);
 
+                        await auth().currentUser.sendEmailVerification()
+
+                        await auth().signOut()
+
+
                         navigation.reset({
                             index: 0,
                             routes: [{ name: 'LoginScreen' }]
                         })
-                        alert("User created succesfully");
+                        alert("User created succesfully. Please verify your email for verification. ");
 
                     } catch (e) {
                         console.log(e);
