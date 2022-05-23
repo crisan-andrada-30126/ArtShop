@@ -232,7 +232,7 @@ export default withFormik({
         width: yup.number().required(),
         height: yup.number().required(),
     }),
-    handleSubmit: (values, { props }) => {
+    handleSubmit: (values, { props }, navigation) => {
 
 
         if (props.art.id) {
@@ -243,9 +243,10 @@ export default withFormik({
             values.artist = props.art.artist;
             values.image = props.art.image;
             values.userId = props.art.userId;
-            uploadArt(values, props.onArtUpdated, { updating: true });
+            uploadArt(values, props.onArtUpdated, { updating: true }, navigation)
+
         } else {
-            uploadArt(values, props.onArtAdded, { updating: false });
+            uploadArt(values, props.onArtAdded, { updating: false }, navigation);
         }
     },
 })(ArtForm);

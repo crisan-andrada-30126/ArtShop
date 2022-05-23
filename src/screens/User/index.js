@@ -68,7 +68,7 @@ const UserScreen = (props) => {
                             </View>
 
                             <View style={styles.left}>
-                                <Text style={styles.text}>
+                                <Text style={{ borderWidth: 0, width: 170, color: '#13405e', fontWeight: 'bold', marginTop: 12 }}>
                                     {user.email}
                                 </Text>
                             </View>
@@ -297,11 +297,11 @@ const styles = StyleSheet.create({
     },
     left: {
         alignItems: 'center',
-        width: '45%',
+        width: '35%',
     },
     right: {
         alignItems: 'center',
-        width: '55%',
+        width: '65%',
     },
 });
 

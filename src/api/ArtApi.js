@@ -1,9 +1,12 @@
 import firebase from "@react-native-firebase/app";
 import storage from '@react-native-firebase/storage';
 import firestore from '@react-native-firebase/firestore';
+import { Alert, } from 'react-native'
 import { v4 as uuidv4 } from 'uuid';
 
-export function uploadArt(art, onArtUploaded, { updating }) {
+const artsCollection = firestore().collection('Artworks');
+
+export function uploadArt(art, onArtUploaded, { updating }, navigation) {
 
     if (art.imageUri) {
         const fileExtension = art.imageUri.split('.').pop();
@@ -19,9 +22,7 @@ export function uploadArt(art, onArtUploaded, { updating }) {
                     console.log("snapshot: " + snapshot.state);
                     console.log("progress: " + (snapshot.bytesTransferred / snapshot.totalBytes) * 100);
 
-                    // if (snapshot.state === firebase.storage.TaskState.SUCCESS) {
-                    //     console.log("Success");
-                    // }
+
                 },
                 error => {
                     unsubscribe();
@@ -78,8 +79,45 @@ export function addArt(art, addCompleted) {
             art.id = snapshot.id;
             snapshot.set(art);
         }).then(() => {
-            addCompleted(art)
-            console.alert("SUCCES")
+
+
+            Alert.alert(
+                'Succes!',
+                'Uploading successfully'
+
+            )
+
         })
         .catch((error) => console.log('Eroare add', error));
+}
+
+export function deleteArt(art) {
+    console.log(art);
+
+    firebase.firestore()
+        .collection('Artworks')
+        .doc(art.id).delete()
+        .then(() => Alert.alert('deleted succesfully'))
+        .catch((error) => console.log(error));
+}
+
+export const getItemsByUserId = (userId) => {
+
+    var responselist = []
+    artsCollection.get().then(querySnapshot => {
+
+        querySnapshot.forEach(documentSnapshot => {
+
+            if (userId == documentSnapshot.data().userId) {
+                console.log('este!')
+                responselist.push(documentSnapshot.data())
+            }
+
+        })
+
+
+    });
+
+    return responselist;
+
 } 
