@@ -22,6 +22,7 @@ export function addToCart(userId, artId, time) {
             snapshot.set(item);
         }).then(() => {
             console.log("SUCCES")
+            alert("Succesfully added. Check the shopping cart")
         })
         .catch((error) => console.log('Eroare add', error));
 

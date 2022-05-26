@@ -61,7 +61,6 @@ const ShoppingCartScreen = () => {
         return () => { isMounted = false }
     }, [cartItemsIds])
 
-
     useEffect(() => {
         let isMounted = true;
         if (items.length > 0) {
@@ -93,7 +92,7 @@ const ShoppingCartScreen = () => {
 
                 <View style={styles.root}>
 
-                    <FlatList data={items}
+                    {user ? <FlatList data={items}
                         renderItem={({ item }) => (
                             <CartProductItem cartItem={item} />
                             //render quantity selector
@@ -103,7 +102,7 @@ const ShoppingCartScreen = () => {
                         showsVerticalScrollIndicator={false}
                         showsHorizontalScrollIndicator={false}
                     />
-
+                        : <Text style={styles.empty}>Shopping cart is empty</Text>}
                     <View>
                         <Text style={styles.subtotal}>Subtotal ({items.length}) items:
                             <Text style={styles.subtotalNumber}> {totalPrice} $</Text>
@@ -149,6 +148,16 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         color: '#5C5C9C',
         fontSize: 18,
+        lineHeight: 20,
+        fontWeight: 'bold'
+    },
+    empty: {
+        height: '55%',
+        marginTop: '50%',
+
+        marginLeft: '20%',
+        color: '#5C5C9C',
+        fontSize: 20,
         lineHeight: 20,
         fontWeight: 'bold'
     }
