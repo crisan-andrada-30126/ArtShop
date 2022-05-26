@@ -7,25 +7,83 @@ import ProductItem from '../../components/ProductItem';
 import CartProductItem from '../../components/ProductShoppingCart';
 import Button from '../../components/Button';
 import Background from "../../images/paintBlue.jpg"
+import { getFavoritesByUserId } from '../../api/FavoritesApi'
+import firestore from '@react-native-firebase/firestore';
+import { useSelector } from 'react-redux'
 
-const products = [
-    { quantity: 1, Title: 'Painting3', Description: 'A nic', Price: '135', Painter: 'unknown' },
 
-    { quantity: 1, Title: 'Painting', Description: 'A nicee beautyyy nice aaa mnahsjhusdy hsgfdyfdt goodaaaa', Price: '100', Painter: 'andrada' }]
-
+const cartCollection = firestore().collection('Cart');
+const artsCollection = firestore().collection('Artworks');
 
 const ShoppingCartScreen = () => {
     const navigation = useNavigation()
-    const [data, setData] = useState(products)
+    const [cartItemsIds, setCartItemsIds] = useState([])
+    const [items, setItems] = useState([])
+    const [totalPrice, setTotalPrice] = useState(0)
+    const user = useSelector((state) => state.user.user)
 
-    const totalPrice = data.reduce((sum, item) => (
-        sum + (item.Price * item.quantity)
-    )
-        , 0);
+
+    useEffect(() => {
+        let isMounted = true;
+        var responselist = []
+        cartCollection.get().then(querySnapshot => {
+            querySnapshot.forEach(documentSnapshot => {
+
+                if (user.uid == documentSnapshot.data().userId) {
+                    responselist.push(documentSnapshot.data().artId)
+                }
+            })
+            if (isMounted) setCartItemsIds(responselist)
+        })
+        return () => { isMounted = false }
+    }, []);
+
+
+    useEffect(() => {
+        let isMounted = true;
+        if (cartItemsIds.length > 0) {
+            var artLists = []
+            artsCollection.get().then(querySnapshot => {
+
+                querySnapshot.forEach(documentSnapshot => {
+
+                    if (cartItemsIds.includes(documentSnapshot.data().id)) {
+                        artLists.push(documentSnapshot.data())
+                    }
+                })
+
+                if (isMounted) {
+                    setItems(artLists)
+
+                }
+            })
+        }
+        return () => { isMounted = false }
+    }, [cartItemsIds])
+
+    useEffect(() => {
+        let isMounted = true;
+        if (items.length > 0) {
+            const price = items.reduce((sum, item) => (
+                sum + parseInt(item.price)
+            )
+                , 0);
+            setTotalPrice(price)
+
+            if (isMounted) {
+                setTotalPrice(price)
+
+            }
+
+        }
+        return () => { isMounted = false }
+    }, [items])
+
 
     const onCheckout = () => {
         navigation.navigate('Adress')
     }
+
     return (
         <View>
             <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
@@ -34,24 +92,25 @@ const ShoppingCartScreen = () => {
 
                 <View style={styles.root}>
 
-                    <FlatList data={data}
+                    {user ? <FlatList data={items}
                         renderItem={({ item }) => (
                             <CartProductItem cartItem={item} />
                             //render quantity selector
 
                         )}
+                        keyExtractor={item => item.id}
                         showsVerticalScrollIndicator={false}
                         showsHorizontalScrollIndicator={false}
                     />
-
+                        : <Text style={styles.empty}>Shopping cart is empty</Text>}
                     <View>
-                        <Text style={styles.subtotal}>Subtotal ({data.length}) items:
+                        <Text style={styles.subtotal}>Subtotal ({items.length}) items:
                             <Text style={styles.subtotalNumber}> {totalPrice} $</Text>
                         </Text>
                         <Button text='Proceed to checkout'
                             onPress={onCheckout}
                             containerStyles={{
-                                backgroundColor: '#DB7093'
+                                backgroundColor: '#E59EAA'
                             }}
                         />
 
@@ -70,11 +129,12 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(226,226,225, 0.8)',
         margin: 10,
         borderRadius: 10,
-        height: '90%'
+        height: '95%'
     },
     image: {
 
         width: '100%',
+        height: '100%'
 
     },
     subtotal: {
@@ -88,6 +148,16 @@ const styles = StyleSheet.create({
         marginVertical: 10,
         color: '#5C5C9C',
         fontSize: 18,
+        lineHeight: 20,
+        fontWeight: 'bold'
+    },
+    empty: {
+        height: '55%',
+        marginTop: '50%',
+
+        marginLeft: '20%',
+        color: '#5C5C9C',
+        fontSize: 20,
         lineHeight: 20,
         fontWeight: 'bold'
     }

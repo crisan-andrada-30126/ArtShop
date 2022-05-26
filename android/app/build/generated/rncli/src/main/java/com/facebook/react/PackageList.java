@@ -21,6 +21,8 @@ import io.invertase.firebase.database.ReactNativeFirebaseDatabasePackage;
 import io.invertase.firebase.firestore.ReactNativeFirebaseFirestorePackage;
 // @react-native-firebase/storage
 import io.invertase.firebase.storage.ReactNativeFirebaseStoragePackage;
+// react-native-gesture-handler
+import com.swmansion.gesturehandler.RNGestureHandlerPackage;
 // react-native-image-picker
 import com.imagepicker.ImagePickerPackage;
 // react-native-safe-area-context
@@ -79,6 +81,7 @@ public class PackageList {
       new ReactNativeFirebaseDatabasePackage(),
       new ReactNativeFirebaseFirestorePackage(),
       new ReactNativeFirebaseStoragePackage(),
+      new RNGestureHandlerPackage(),
       new ImagePickerPackage(),
       new SafeAreaContextPackage(),
       new RNScreensPackage(),

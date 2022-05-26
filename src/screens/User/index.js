@@ -23,7 +23,6 @@ const UserScreen = (props) => {
     const navigation = useNavigation()
     const user = useSelector((state) => state.user.user)
 
-
     const [update, setUpdate] = useState({
         displayName: user.displayName ? user.displayName : '',
         photoURL: '',
@@ -165,11 +164,7 @@ const UserScreen = (props) => {
 
 
                     </View>
-                    {/* <View style={styles.container}>
 
-                        <FormButton Title='Logout' buttonTitle="Logout" onPress={() => props.handleLogout()} />
-
-                    </View> */}
                 </ScrollView>
             </ImageBackground>
 

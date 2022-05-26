@@ -31,7 +31,7 @@
 19        android:allowBackup="false"
 19-->D:\LICENTA\ArtShop\android\app\src\main\AndroidManifest.xml:11:7-34
 20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-20-->[androidx.core:core:1.5.0] C:\Users\Andrada\.gradle\caches\transforms-3\47291499e05edddbe677d920b83f8a54\transformed\core-1.5.0\AndroidManifest.xml:24:18-86
+20-->[androidx.core:core:1.6.0] C:\Users\Andrada\.gradle\caches\transforms-3\64a9063406808f30fdf55983aa926644\transformed\core-1.6.0\AndroidManifest.xml:24:18-86
 21        android:debuggable="true"
 22        android:icon="@mipmap/ic_launcher"
 22-->D:\LICENTA\ArtShop\android\app\src\main\AndroidManifest.xml:9:7-41

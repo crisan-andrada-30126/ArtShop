@@ -10,11 +10,13 @@ import ButtonAR from '../../components/Button/btnAR'
 import { useRoute } from '@react-navigation/native'
 import Background from "../../images/paintBlue.jpg"
 import { addToFavorites, removeFavorit } from '../../api/FavoritesApi';
+import { addToCart } from '../../api/AddToCartApi';
 import { useNavigation } from '@react-navigation/native';
 import firestore from '@react-native-firebase/firestore';
 import { useDispatch, useSelector } from 'react-redux'
 
 const favorites = firestore().collection('Favorites');
+const cart = firestore().collection('Cart');
 
 
 
@@ -84,6 +86,36 @@ const ProductScreen = (props) => {
         }
 
     }
+    var currentdate = new Date();
+    var datetime = "Last Sync: " + currentdate.getDate() + "/"
+        + (currentdate.getMonth() + 1) + "/"
+        + currentdate.getFullYear() + " @ "
+        + currentdate.getHours() + ":"
+        + currentdate.getMinutes() + ":"
+        + currentdate.getSeconds();
+    const addToShoppingCart = () => {
+
+        if (user) {
+            addToCart(user.uid, product.id, datetime)
+
+        }
+        else {
+
+            Alert.alert(
+                "Do you have an account ?",
+                "Please log in or register",
+                [
+                    {
+                        text: "Cancel",
+                        onPress: () => console.log("Cancel Pressed"),
+                        style: "cancel"
+                    },
+                    { text: "OK", onPress: () => navigation.navigate("NotLoged") }
+                ]
+            );
+        }
+
+    }
 
     return (<ImageBackground source={Background} resizeMode="cover" style={styles.image}>
         <ScrollView style={styles.root}>
@@ -118,7 +150,7 @@ const ProductScreen = (props) => {
             </Text>
             {/*Buttons*/}
             <Button text={'Add To Cart'}
-                onPress={() => { console.warn('add to cart') }} />
+                onPress={() => addToShoppingCart()} />
             <ButtonAR
                 onPress={() => { console.warn('AR') }} />
             {!isFavorit ? <Button
