@@ -1,36 +1,82 @@
-import { View, Text, Image, StyleSheet, ScrollView } from 'react-native'
+import { View, Text, Image, StyleSheet, ScrollView, Animated } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import database from '@react-native-firebase/database';
 import Picture from '../../images/pictur.jpg'
-import QuantitySelector from '../QuantitySelector/index'
+import { removeFromCart } from '../../api/AddToCartApi'
+import { GestureHandlerRootView, Swipeable, TouchableOpacity } from 'react-native-gesture-handler';
+
 /*render product in cart  */
+
+
+
+
 const CartProductItem = ({ cartItem }) => {
 
-    const [quantity, setQuantity] = useState(cartItem.quantity)
+    const rightSwipeActions = () => {
+        return (
+            <TouchableOpacity onPress={() => alert('cartItem.id', cartItem.id)}>
+                <View
+                    style={{
+                        backgroundColor: '#E59EAA',
+                        justifyContent: 'center',
+                        alignItems: 'flex-end',
+                        marginTop: 10,
+                        height: 90,
+                        borderRadius: 16,
+
+                    }}
+                >
+
+                    <Text
+                        style={{
+                            color: '#FFF',
+                            paddingHorizontal: 10,
+                            fontWeight: '600',
+                            paddingHorizontal: 30,
+                            paddingVertical: 20,
+                        }}
+                    >
+                        Delete
+                    </Text>
+
+                </View >
+            </TouchableOpacity >
+        );
+    };
+
 
     return (
+        <GestureHandlerRootView>
+            <Swipeable renderRightActions={rightSwipeActions}>
+                < View style={styles.root}  >
+                    <View style={styles.left}>
+                        <Image style={styles.image} source={{ uri: cartItem.image }} />
 
-        < View style={styles.root} opacity={0.85} >
-            <View style={styles.left}>
-                <Image style={styles.image} source={Picture} />
+                    </View>
+                    <View style={styles.right}>
 
-            </View>
-            <View style={styles.right}>
+                        <Text style={styles.title} >
+                            {cartItem.name}
+                        </Text>
+                        <Text style={styles.title} >
+                            Painter: {cartItem.artist}
+                        </Text>
+                        < Text style={styles.descriptionPrice}>
+                            Price :
+                            {cartItem.price} $
+                        </Text>
+                    </View>
 
-                <Text style={styles.title} >
-                    {cartItem.Title}
-                </Text>
-                < Text style={styles.descriptionPrice}>
-                    Price :
-                    {cartItem.Price} $
-                </Text>
-                <QuantitySelector quantity={cartItem.quantity} setQuantity={setQuantity} />
-            </View>
+                </View >
+            </Swipeable>
+        </GestureHandlerRootView >
 
-        </View >
     )
 
 }
+
+
+
 
 const styles = StyleSheet.create({
     root: {
@@ -57,8 +103,7 @@ const styles = StyleSheet.create({
     image: {
         margin: 'auto',
         width: 140,
-        height: '80%',
-        marginTop: 7,
+        height: '100%',
         borderTopLeftRadius: 16,
         borderBottomLeftRadius: 16,
         marginBottom: 1,
@@ -81,7 +126,33 @@ const styles = StyleSheet.create({
         fontFamily: 'Bree Serif',
         color: '#fff',
     },
-
+    swipedRow: {
+        flexDirection: 'row',
+        flex: 1,
+        alignItems: 'center',
+        paddingLeft: 5,
+        backgroundColor: '#818181',
+        margin: 20,
+        minHeight: 50,
+    },
+    swipedConfirmationContainer: {
+        flex: 1,
+    },
+    deleteConfirmationText: {
+        color: '#fcfcfc',
+        fontWeight: 'bold',
+    },
+    deleteButton: {
+        backgroundColor: '#b60000',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        height: '100%',
+    },
+    deleteButtonText: {
+        color: '#fcfcfc',
+        fontWeight: 'bold',
+        padding: 3,
+    },
 
 });
 export default CartProductItem;
