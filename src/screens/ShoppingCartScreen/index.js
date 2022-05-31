@@ -1,5 +1,5 @@
 import { View, Text, Image, StyleSheet, ScrollView, FlatList, Pressable, ImageBackground } from 'react-native'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { useNavigation } from '@react-navigation/native';
 import database from '@react-native-firebase/database';
 import Picture from '../../images/pictur.jpg'
@@ -9,7 +9,10 @@ import Button from '../../components/Button';
 import Background from "../../images/paintBlue.jpg"
 import { getFavoritesByUserId } from '../../api/FavoritesApi'
 import firestore from '@react-native-firebase/firestore';
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { useRoute } from '@react-navigation/native';
+import { setRoute } from "../../redux/actions/routesActions"
+
 
 
 const cartCollection = firestore().collection('Cart');
@@ -17,11 +20,38 @@ const artsCollection = firestore().collection('Artworks');
 
 const ShoppingCartScreen = () => {
     const navigation = useNavigation()
-    const [cartItemsIds, setCartItemsIds] = useState([])
+    const [cartItems, setCartItems] = useState([])
     const [items, setItems] = useState([])
     const [totalPrice, setTotalPrice] = useState(0)
+    const [loadingItems, setLoadingItems] = useState(false)
     const user = useSelector((state) => state.user.user)
+    const prevRoute = useSelector((state) => state.route)
+    const [route2, setRoute2] = useState(prevRoute.route)
+    const dispatch = useDispatch();
+    const route = useRoute().name;
 
+    console.log('route2', { r: route2.name, r2: route })
+
+    // useEffect(() => {
+
+    //     dispatch(setRoute(route))
+    //     setRoute2(route)
+    // }, [])
+
+
+    // useEffect(() => {
+    //     const currentRoute = useRoute();
+    //     if (route.name != route2) {
+    //         setLoadingItems(!loadingItems)
+    //         dispatch(setRoute(currentRoute))
+
+    //     }
+    // }, [])
+
+
+
+
+    useMemo(() => setLoadingItems(!loadingItems), [])
 
     useEffect(() => {
         let isMounted = true;
@@ -29,43 +59,52 @@ const ShoppingCartScreen = () => {
         cartCollection.get().then(querySnapshot => {
             querySnapshot.forEach(documentSnapshot => {
 
-                if (user.uid == documentSnapshot.data().userId) {
-                    responselist.push(documentSnapshot.data().artId)
+                if (user && user.uid == documentSnapshot.data().userId) {
+                    const obj = { iteminCartId: documentSnapshot.data().id, artId: documentSnapshot.data().artId }
+                    responselist.push(obj)
                 }
             })
-            if (isMounted) setCartItemsIds(responselist)
+
+            if (isMounted) setCartItems(responselist)
         })
         return () => { isMounted = false }
-    }, []);
+    }, [loadingItems]);
 
 
     useEffect(() => {
         let isMounted = true;
-        if (cartItemsIds.length > 0) {
+        if (cartItems.length > 0) {
             var artLists = []
             artsCollection.get().then(querySnapshot => {
 
                 querySnapshot.forEach(documentSnapshot => {
+                    cartItems.forEach(i => {
+                        if (i.artId == documentSnapshot.data().id) {
+                            const obj = { itemInCartId: i.iteminCartId, artItem: documentSnapshot.data() }
+                            artLists.push(obj)
+                        }
+                    });
 
-                    if (cartItemsIds.includes(documentSnapshot.data().id)) {
-                        artLists.push(documentSnapshot.data())
-                    }
+
+
                 })
-
+                console.log('artLists', artLists)
                 if (isMounted) {
                     setItems(artLists)
 
                 }
             })
+        } else {
+            setItems([])
         }
         return () => { isMounted = false }
-    }, [cartItemsIds])
+    }, [cartItems])
 
     useEffect(() => {
         let isMounted = true;
         if (items.length > 0) {
             const price = items.reduce((sum, item) => (
-                sum + parseInt(item.price)
+                sum + parseInt(item.artItem.price)
             )
                 , 0);
             setTotalPrice(price)
@@ -75,10 +114,20 @@ const ShoppingCartScreen = () => {
 
             }
 
+        } else {
+            setTotalPrice(0)
         }
         return () => { isMounted = false }
     }, [items])
+    // console.log('user', user)
+    const currentDate = new Date();
+    //console.log('currentDate', currentDate)
+    //console.log('items!!', items[0]?.artItem.createAt)
 
+    //var nanoseconds = items[0]?.createAt.nanoseconds   // nanoseconds since target time that you want to convert to java.util.Date
+    // console.log('nanoseconds', nanoseconds)
+    // console.log('window.performance.now()', window.performance.now())
+    console.log('loadingItems', loadingItems)
 
     const onCheckout = () => {
         navigation.navigate('Adress')
@@ -94,7 +143,7 @@ const ShoppingCartScreen = () => {
 
                     {user ? <FlatList data={items}
                         renderItem={({ item }) => (
-                            <CartProductItem cartItem={item} />
+                            <CartProductItem cartItem={item} setLoadingItems={setLoadingItems} loadingItems={loadingItems} />
                             //render quantity selector
 
                         )}

@@ -10,11 +10,12 @@ import { GestureHandlerRootView, Swipeable, TouchableOpacity } from 'react-nativ
 
 
 
-const CartProductItem = ({ cartItem }) => {
+const CartProductItem = ({ cartItem, setLoadingItems, loadingItems }) => {
 
-    const rightSwipeActions = () => {
+    const rightSwipeActions = (cartItem) => {
+
         return (
-            <TouchableOpacity onPress={() => alert('cartItem.id', cartItem.id)}>
+            <TouchableOpacity onPress={() => removeFromCart(cartItem.itemInCartId, setLoadingItems, loadingItems)}>
                 <View
                     style={{
                         backgroundColor: '#E59EAA',
@@ -47,23 +48,23 @@ const CartProductItem = ({ cartItem }) => {
 
     return (
         <GestureHandlerRootView>
-            <Swipeable renderRightActions={rightSwipeActions}>
+            <Swipeable renderRightActions={() => rightSwipeActions(cartItem)}>
                 < View style={styles.root}  >
                     <View style={styles.left}>
-                        <Image style={styles.image} source={{ uri: cartItem.image }} />
+                        <Image style={styles.image} source={{ uri: cartItem.artItem.image }} />
 
                     </View>
                     <View style={styles.right}>
 
                         <Text style={styles.title} >
-                            {cartItem.name}
+                            {cartItem.artItem.name}
                         </Text>
                         <Text style={styles.title} >
-                            Painter: {cartItem.artist}
+                            Painter: {cartItem.artItem.artist}
                         </Text>
                         < Text style={styles.descriptionPrice}>
                             Price :
-                            {cartItem.price} $
+                            {cartItem.artItem.price} $
                         </Text>
                     </View>
 
