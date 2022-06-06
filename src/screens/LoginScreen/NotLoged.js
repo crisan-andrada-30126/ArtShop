@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     title: {
 
         fontSize: 60,
-        color: "#13405e"
+        color: "black"
 
     },
     image: {
@@ -46,7 +46,7 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     btn: {
-        backgroundColor: "#13405e", borderColor: "#13405e", width: 300,
+        backgroundColor: "black", borderColor: "black", width: 300,
 
         borderRadius: 0,
         height: 50

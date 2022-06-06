@@ -63,8 +63,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'flex-start',
-        borderColor: '#496678',
-        borderWidth: 2,
+
 
     },
     left: {
@@ -86,7 +85,7 @@ const styles = StyleSheet.create({
         fontSize: 19,
         textAlign: 'center',
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
         fontWeight: 'bold'
     },
     description: {
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize: 16,
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
 
     },
     descriptionPrice: {
@@ -105,13 +104,13 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
     },
     subTitle: {
         marginTop: 5,
         fontSize: 16,
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
     }
 
 });

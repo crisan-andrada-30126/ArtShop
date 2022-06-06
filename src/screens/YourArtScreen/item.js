@@ -41,7 +41,7 @@ const ArtItem = ({ product, setChanged, changed }) => {
                     {product.name}
                 </Text>
                 <View style={styles.btn}>
-                    <View style={styles.btn}>
+                    {/* <View style={styles.btn}>
                         <Button
                             text="Edit "
                             onPress={editItem}
@@ -49,7 +49,7 @@ const ArtItem = ({ product, setChanged, changed }) => {
                         >
 
                         </Button>
-                    </View>
+                    </View> */}
                     <View style={styles.btn}>
                         <Button
                             containerStyles={{ height: 35, width: 65, backgroundColor: "#5C5C9C" }}
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         fontSize: 19,
         textAlign: 'center',
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
         fontWeight: 'bold'
     },
 

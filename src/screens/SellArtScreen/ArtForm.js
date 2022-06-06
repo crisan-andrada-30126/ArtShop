@@ -138,7 +138,7 @@ const styles = StyleSheet.create({
         width: '100%'
     },
     size: {
-        borderColor: '#13405e'
+        borderColor: 'black'
     },
     container: {
         flex: 1,
@@ -152,15 +152,15 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 8,
         height: 50,
-        color: '#13405e',
+        color: 'black',
         width: '75%',
         marginBottom: 16,
         marginTop: 16
     },
     formInputMini: {
         height: 50,
-        color: '#13405e',
-        borderColor: '#13405e',
+        color: 'black',
+        borderColor: 'black',
         borderWidth: 2,
         borderRadius: 8,
         backgroundColor: '#E2E2E1',
@@ -174,15 +174,15 @@ const styles = StyleSheet.create({
         alignItems: 'center', //Centered vertically
 
         height: 50,
-        color: '#13405e',
-        borderColor: '#13405e',
+        color: 'black',
+        borderColor: 'black',
         borderWidth: 2,
         borderBottomRightRadius: 8,
         borderTopRightRadius: 8,
         alignItems: 'center',
         width: '10%',
         marginLeft: -50,
-        backgroundColor: '#13405e',
+        backgroundColor: 'black',
     },
     cm: {
         color: '#E2E2E1',
@@ -198,8 +198,8 @@ const styles = StyleSheet.create({
         width: '80%',
         alignSelf: 'center',
         height: 50,
-        color: '#13405e',
-        borderColor: '#13405e',
+        color: 'black',
+        borderColor: 'black',
         borderWidth: 2,
         borderRadius: 8,
         backgroundColor: '#E2E2E1',

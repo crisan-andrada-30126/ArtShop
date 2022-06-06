@@ -85,12 +85,12 @@ const styles = StyleSheet.create({
         width: 350,
         height: 90,
         borderRadius: 16,
-        backgroundColor: '#13405e',
+        backgroundColor: 'white',
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'flex-start',
-        borderColor: '#13405e',
+        borderColor: 'white',
         borderWidth: 2,
 
     },
@@ -114,7 +114,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: 'left',
         fontFamily: 'Bree Serif',
-        color: '#fff',
+        color: '#000',
         fontWeight: 'bold'
     },
     descriptionPrice: {
