@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 const HeaderComponent = ({ searchValue, setSearchValue }) => {
 
     return (
-        <SafeAreaView style={{ backgroundColor: '#13405e' }}>
+        <SafeAreaView style={{ backgroundColor: 'black' }}>
             <View style={{ height: 100 }}>
                 <Image
                     style={{ width: '40%', height: '20%', marginTop: 10, marginLeft: '30%', alignContent: 'center' }}

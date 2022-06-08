@@ -1,5 +1,6 @@
 import { View, Text, Image, StyleSheet, ScrollView, Animated } from 'react-native'
 import React, { useState, useEffect } from 'react'
+import { Alert, } from 'react-native'
 import database from '@react-native-firebase/database';
 import Picture from '../../images/pictur.jpg'
 import { removeFromCart } from '../../api/AddToCartApi'
@@ -14,7 +15,7 @@ const CartProductItem = ({ cartItem }) => {
 
     const rightSwipeActions = () => {
         return (
-            <TouchableOpacity onPress={() => alert('cartItem.id', cartItem.id)}>
+            <TouchableOpacity onPress={() => Alert.alert('Deleted', 'The item is no longer in your shopping cart!')}>
                 <View
                     style={{
                         backgroundColor: '#E59EAA',
@@ -85,12 +86,12 @@ const styles = StyleSheet.create({
         width: 350,
         height: 90,
         borderRadius: 16,
-        backgroundColor: '#13405e',
+        backgroundColor: 'white',
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'flex-start',
-        borderColor: '#13405e',
+        borderColor: 'white',
         borderWidth: 2,
 
     },
@@ -114,7 +115,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
         textAlign: 'left',
         fontFamily: 'Bree Serif',
-        color: '#fff',
+        color: '#000',
         fontWeight: 'bold'
     },
     descriptionPrice: {

@@ -10,6 +10,7 @@ import UserStack from '../login/UserStack'
 import { connect } from 'react-redux';
 import { isLoged } from '../redux/actions/loged';
 import { saveUser } from '../redux/actions/loged';
+import { Alert, } from 'react-native'
 import { useDispatch, useSelector } from 'react-redux'
 
 
@@ -54,7 +55,7 @@ function Routes(props) {
                 dispatch(isLoged(true))
             }
             else {
-                alert("This account  is not verified ! Please verify your email !")
+                Alert.alert("Try again", "This account  is not verified ! Please verify your email !")
                 dispatch(saveUser(null))
                 dispatch(isLoged(false))
             }

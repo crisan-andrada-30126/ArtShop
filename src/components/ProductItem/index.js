@@ -33,12 +33,7 @@ const ProductItem = ({ product }) => {
                     </Text>
                     {product.description}
                 </Text>
-                <Text style={styles.description}>
-                    <Text style={styles.subTitle}>
-                        Painter :
-                    </Text>
-                    {product.artist}
-                </Text>
+
 
                 < Text style={styles.descriptionPrice}>
                     Price :
@@ -53,29 +48,29 @@ const ProductItem = ({ product }) => {
 
 const styles = StyleSheet.create({
     root: {
-        marginLeft: 30,
+        marginLeft: 23,
         marginTop: 10,
+        marginBottom: 5,
         width: 350,
-        height: 200,
+        height: 150,
         borderRadius: 16,
         backgroundColor: '#fff',
         flex: 1,
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'flex-start',
-        borderColor: '#496678',
-        borderWidth: 2,
+
 
     },
     left: {
         width: '45%',
     },
     right: {
-        width: '55%',
+        width: '53%',
     },
     image: {
         margin: 'auto',
-        width: 140,
+        width: 150,
         height: '100%',
         borderTopLeftRadius: 16,
         borderBottomLeftRadius: 16,
@@ -86,7 +81,7 @@ const styles = StyleSheet.create({
         fontSize: 19,
         textAlign: 'center',
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
         fontWeight: 'bold'
     },
     description: {
@@ -95,7 +90,7 @@ const styles = StyleSheet.create({
         marginTop: 5,
         fontSize: 16,
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
 
     },
     descriptionPrice: {
@@ -105,13 +100,14 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
     },
     subTitle: {
         marginTop: 5,
         fontSize: 16,
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
+        fontWeight: 'bold',
     }
 
 });

@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
         fontSize: 19,
         textAlign: 'center',
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
         fontWeight: 'bold'
     },
     data: {
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
         fontSize: 13,
         textAlign: 'center',
         fontFamily: 'Bree Serif',
-        color: '#13405e',
+        color: 'black',
         fontWeight: 'bold'
     },
 

@@ -103,19 +103,21 @@ const ShoppingCartScreen = () => {
                         showsHorizontalScrollIndicator={false}
                     />
                         : <Text style={styles.empty}>Shopping cart is empty</Text>}
-                    <View>
-                        <Text style={styles.subtotal}>Subtotal ({items.length}) items:
-                            <Text style={styles.subtotalNumber}> {totalPrice} $</Text>
-                        </Text>
-                        <Button text='Proceed to checkout'
-                            onPress={onCheckout}
-                            containerStyles={{
-                                backgroundColor: '#E59EAA'
-                            }}
-                        />
+                    {user ?
+                        <View>
+                            <Text style={styles.subtotal}>Subtotal ({items.length}) items:
+                                <Text style={styles.subtotalNumber}> {totalPrice} $</Text>
+                            </Text>
+                            <Button text='Proceed to checkout'
+                                onPress={onCheckout}
+                                containerStyles={{
+                                    backgroundColor: '#E59EAA'
+                                }}
+                            />
 
 
-                    </View>
+                        </View>
+                        : <Text></Text>}
 
                 </View >
             </ImageBackground>
@@ -126,7 +128,7 @@ const ShoppingCartScreen = () => {
 
 const styles = StyleSheet.create({
     root: {
-        backgroundColor: 'rgba(226,226,225, 0.8)',
+
         margin: 10,
         borderRadius: 10,
         height: '95%'
@@ -139,7 +141,7 @@ const styles = StyleSheet.create({
     },
     subtotal: {
         marginVertical: 10,
-        color: '#13405e',
+        color: 'black',
         fontSize: 16,
         lineHeight: 20,
 
@@ -152,13 +154,13 @@ const styles = StyleSheet.create({
         fontWeight: 'bold'
     },
     empty: {
-        height: '55%',
-        marginTop: '50%',
+        height: '70%',
+        marginTop: '60%',
 
-        marginLeft: '20%',
-        color: '#5C5C9C',
-        fontSize: 20,
-        lineHeight: 20,
+        marginLeft: '12%',
+        color: '#000',
+        fontSize: 28,
+        lineHeight: 28,
         fontWeight: 'bold'
     }
 })

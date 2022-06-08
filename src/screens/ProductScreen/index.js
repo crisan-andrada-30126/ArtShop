@@ -96,7 +96,7 @@ const ProductScreen = (props) => {
     const addToShoppingCart = () => {
 
         if (user) {
-            addToCart(user.uid, product.id, datetime)
+            addToCart(user.uid, product.id, datetime, navigation)
 
         }
         else {
