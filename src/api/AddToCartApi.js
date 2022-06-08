@@ -40,6 +40,15 @@ export function addToCart(userId, artId, time, navigation) {
 
 }
 
-export function removeFromCart(id) {
-    firebase.firestore().collection("Cart").doc(id).delete()
+export function removeFromCart(id, setLoadingItems, loadingItems) {
+
+    firebase.firestore()
+        .collection('Cart')
+        .doc(id).delete()
+        .then(() => {
+            Alert.alert('deleted succesfully')
+            setLoadingItems(!loadingItems)
+        })
+        .catch((error) => console.log(error));
+
 }

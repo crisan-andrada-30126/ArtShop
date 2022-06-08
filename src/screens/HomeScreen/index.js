@@ -5,6 +5,10 @@ import Picture from '../../images/pictur.jpg'
 import ProductItem from '../../components/ProductItem';
 import Background from '../../images/paintBlue.jpg'
 import firestore from '@react-native-firebase/firestore';
+import { useRoute } from '@react-navigation/native';
+import { setRoute } from '../../redux/actions/routesActions';
+import { useDispatch, useSelector } from 'react-redux'
+
 
 const artsCollection = firestore().collection('Artworks');
 
@@ -13,8 +17,10 @@ const HomeScreen = ({ searchValue, HeaderComponent, setSearchValue }) => {
 
     const [artworks, setArtworks] = useState([])
     const [filtredArtworks, setFiltredArtworks] = useState([])
+    const dispatch = useDispatch();
 
-
+    const route = useRoute();
+    dispatch(setRoute(route.name))
 
     const getData = () => {
 
