@@ -67,7 +67,7 @@ const UserScreen = (props) => {
                             </View>
 
                             <View style={styles.left}>
-                                <Text style={{ borderWidth: 0, width: 170, color: '#13405e', fontWeight: 'bold', marginTop: 12 }}>
+                                <Text style={{ borderWidth: 0, width: 170, color: 'black', fontWeight: 'bold', marginTop: 12 }}>
                                     {user.email}
                                 </Text>
                             </View>
@@ -83,7 +83,7 @@ const UserScreen = (props) => {
 
                             <View style={styles.left}>
                                 <FormInput
-                                    style={{ borderWidth: 0, width: 100, color: '#13405e', fontWeight: 'bold' }}
+                                    style={{ borderWidth: 0, width: 100, color: 'black', fontWeight: 'bold' }}
                                     value={update.displayName}
                                     placeholderText='Name'
                                     onChangeText={name => setUpdate({ ...update, displayName: name })}
@@ -101,7 +101,7 @@ const UserScreen = (props) => {
 
                             <View style={styles.left}>
                                 <FormInput
-                                    style={{ borderWidth: 0, width: 100, color: '#13405e', fontWeight: 'bold' }}
+                                    style={{ borderWidth: 0, width: 100, color: 'black', fontWeight: 'bold' }}
                                     value={update.phoneNumber}
                                     placeholderText='PhoneNumber'
                                     onChangeText={number => setUpdate({ ...update, phoneNumber: number })}
@@ -273,7 +273,7 @@ const styles = StyleSheet.create({
         marginTop: 10,
         fontSize: 16,
         fontWeight: 'bold',
-        color: '#13405e',
+        color: 'black',
     },
     root: {
         marginLeft: 10,
@@ -286,7 +286,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'flex-start',
-        borderColor: '#13405e',
+        borderColor: 'black',
         borderWidth: 2,
 
     },

@@ -1,6 +1,7 @@
 import React, { createContext, useState } from 'react';
 import auth from '@react-native-firebase/auth';
 import { useNavigation } from '@react-navigation/native';
+import { Alert, } from 'react-native'
 
 /**
  * This provider is created
@@ -39,7 +40,7 @@ export const AuthProvider = ({ children }) => {
                             index: 0,
                             routes: [{ name: 'LoginScreen' }]
                         })
-                        alert("User created succesfully. Please verify your email for verification. ");
+                        Alert.alert("Succes", "User created succesfully. Please verify your email for verification. ");
 
                     } catch (e) {
                         console.log(e);
@@ -49,7 +50,7 @@ export const AuthProvider = ({ children }) => {
                 resetPassword: async (email) => {
                     try {
                         await auth().sendPasswordResetEmail(email)
-                        alert("We send you an email! Please check your email ! ")
+                        Alert.alert("Verification", "We send you an email! Please check your email ! ")
                         navigation.reset({
                             index: 0,
                             routes: [{ name: 'LoginScreen' }]

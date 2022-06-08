@@ -15,14 +15,12 @@ const Button = ({ text, onPress, containerStyles }) => {
 
 const styles = StyleSheet.create({
     root: {
-        backgroundColor: '#13405e',
+        backgroundColor: 'black',
         marginVertical: 10,
         height: 40,
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: 5,
-        borderColor: '#606F7D',
-        borderWidth: 1,
         opacity: 2,
         zIndex: 99
     },

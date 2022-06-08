@@ -59,14 +59,14 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 24,
         marginBottom: 10,
-        color: '#13405e',
+        color: 'black',
         fontWeight: 'bold',
         fontSize: 30
     },
     textInfo: {
         fontSize: 13,
         marginBottom: 10,
-        color: '#13405e',
+        color: 'black',
         marginRight: 35,
         marginLeft: 35,
         textAlign: 'center',
@@ -78,6 +78,6 @@ const styles = StyleSheet.create({
     },
     navButtonText: {
         fontSize: 20,
-        color: '#13405e'
+        color: 'black'
     }
 });

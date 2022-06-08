@@ -11,18 +11,18 @@ const styles = StyleSheet.create({
     },
     price: {
         fontSize: 22,
-        color: '#13405e',
+        color: 'black',
         fontWeight: 'bold',
         opacity: 1
     },
     description: {
         marginVertical: 10,
-        color: '#13405e',
+        color: 'black',
         fontSize: 16,
         lineHeight: 20,
     },
     title: {
-        color: '#13405e',
+        color: 'black',
         fontSize: 18,
         fontWeight: 'bold',
     }

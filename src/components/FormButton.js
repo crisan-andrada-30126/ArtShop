@@ -12,8 +12,8 @@ export default function FormButton({ buttonTitle, ...rest }) {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    backgroundColor: '#13405e',
-    color: '#E6E6FA',
+    backgroundColor: 'black',
+    color: 'black',
     width: 250,
     marginBottom: 10,
     marginTop: 10,
