@@ -11,12 +11,17 @@ import Background from '../../images/paintBlue.jpg';
 import GridList from '../../components/GridList';
 import { withFormik } from 'formik';
 import * as yup from 'yup';
+import { useNavigation } from '@react-navigation/native';
 import { addArt, updateArt, uploadArt } from '../../api/ArtApi';
 import CurryImagePicker from "../../components/ImagePicker/CurryImagePicker "
 import Button from '../../components/Button';
 
 
+
+
+
 const ArtForm = (props) => {
+    const navigation = useNavigation();
 
     const sizeNumber = [{ id: "size", label: "?", min: 0, max: 2000 }];
     useEffect(() => {

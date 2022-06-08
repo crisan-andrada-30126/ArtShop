@@ -8,10 +8,15 @@ export const NotLoged = (props) => {
     return (
 
         <View style={styles.container}>
+
             <ImageBackground source={Background} resizeMode="cover" style={styles.image}>
                 <Text style={styles.title}>
                     Welcome
                 </Text>
+                {/* <Image
+                    source={require('../../images/pink.gif')}
+                    style={styles.image}
+                /> */}
                 <Image
                     style={styles.logo}
                     source={logo}
@@ -35,7 +40,8 @@ const styles = StyleSheet.create({
     title: {
 
         fontSize: 60,
-        color: "black"
+        color: "black",
+        fontWeight: 'bold'
 
     },
     image: {
@@ -61,7 +67,7 @@ const styles = StyleSheet.create({
     },
 
     logo: {
-
+        top: '1%',
         bottom: '5%',
         width: 350,
         height: 300,

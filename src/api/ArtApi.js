@@ -39,10 +39,10 @@ export function uploadArt(art, onArtUploaded, { updating }, navigation) {
 
                             if (updating) {
                                 //    console.log("Updating....");
-                                updateArt(art, onArtUploaded);
+                                updateArt(art, onArtUploaded, navigation);
                             } else {
                                 //  console.log("adding...");
-                                addArt(art, onArtUploaded);
+                                addArt(art, onArtUploaded, navigation);
                             }
                         })
                 }
@@ -52,7 +52,7 @@ export function uploadArt(art, onArtUploaded, { updating }, navigation) {
         console.log("no  image upload");
         if (updating) {
             //console.log("Updating....");
-            updateArt(art, onArtUploaded);
+            updateArt(art, onArtUploaded, navigation);
         } else {
             console.log("you must have an  image upload");
         }
@@ -70,7 +70,7 @@ export function updateArt(art, updateComplete) {
         .catch((error) => console.log(error));
 }
 
-export function addArt(art, addCompleted) {
+export function addArt(art, addCompleted, navigation) {
     art.createAt = firebase.firestore.FieldValue.serverTimestamp();
 
     firebase.firestore().collection('Artworks')
@@ -83,7 +83,12 @@ export function addArt(art, addCompleted) {
 
             Alert.alert(
                 'Succes!',
-                'Uploading successfully'
+                'Uploading successfully',
+                [{
+                    text: 'OK',
+                    // onPress: () => navigation.navigate("Profile"),
+                }
+                ]
 
             )
 
@@ -97,7 +102,7 @@ export function deleteArt(art) {
     firebase.firestore()
         .collection('Artworks')
         .doc(art.id).delete()
-        .then(() => Alert.alert('deleted succesfully'))
+        .then(() => Alert.alert('delete', 'deleted succesfully'))
         .catch((error) => console.log(error));
 }
 

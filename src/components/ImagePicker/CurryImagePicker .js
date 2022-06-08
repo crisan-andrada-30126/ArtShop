@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     btn: {
         flexDirection: "row",
         marginLeft: 5,
-        justifyContent: 'space-evenly'
+        justifyContent: 'space-evenly',
 
     },
     previewImage: {
